@@ -735,6 +735,7 @@ textarea {
 
   footer.info-testimonial{
     padding: 0;
+    background-color: transparent;
   }
 
   footer.info-testimonial img{
