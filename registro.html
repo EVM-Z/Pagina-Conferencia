@@ -75,7 +75,27 @@
     </div><!--.contenedor-->
   </div><!--.barra-->
 
-  
+  <section class="seccion contenedor">
+    <h2>Registor de Usuarios</h2>
+    <form action="index.html" id="registro" class="registro" method="POST">
+      <div class="registro caja clearfix" id="datos_usuario">
+        <div class="campo">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre">
+        </div>
+        <div class="campo">
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" placeholder="Tu Apellido">
+        </div>
+        <div class="campo">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Tu Email">
+        </div>
+        <!-- Nos sirve para mostrar en mensaje de error -->
+        <div id="error"></div>
+      </div>
+    </form>
+  </section>
 
   <footer class="site-footer">
     <div class="contenedor clearfix">
