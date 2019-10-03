@@ -941,8 +941,42 @@ textarea {
   }
 
   .contenido-dia > div label time{
+    /* Remarcamos la hora de naranja */
     color: #fe4918;
     font-weight: bold;
+  }
+
+  /* Resumen Registro */
+  div.resumen p{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  div.resumen div.extras{
+    float: left;
+    width: 50%;
+    padding: 30px;
+  }
+
+  div.extras div.orden{
+    text-transform: left;
+    margin-bottom: 10px;
+  }
+
+  div.extras div.orden input{
+    margin: 10px 0 0 0;
+  }
+
+  div.resumen div.total{
+    float: right;
+    width: 50%;
+    padding: 30px;
+  }
+
+  div.resumen input{
+    display: block;
+    /* Centramos los botones */
+    margin: 10px auto;
   }
 
   
