@@ -221,6 +221,46 @@
       </div><!--.caja-->
     </div> <!--#eventos-->
 
+    <div class="resumen" id="resumen">
+      <h3>Pago y Extras</h3>
+      <div class="caja clearfix">
+        <div class="extras">
+          <div class="orden">
+            <label for="camisa_evento">Camisa del evento $10 <small>(promoción 7% de descuento)</small></label>
+            <input type="number" min="0" id="camisa_evento" size="3" placeholder="0">
+          </div><!--.orden-->
+          <div class="orden">
+            <label for="etiquetas">Paquete de 10 etiquetas<small>(HTML5, CSS3, JavaScript, Chrome)</small></label>
+            <input type="number" min="0" id="etiquetas" size="3" placeholder="0">
+          </div><!--.orden-->
+          <div class="orden">
+            <label for="regalo">Seleccione un regalo</label>
+            <select name="" id="regalo" required>
+              <option value="">Seleccione un regalo</option>
+              <option value="ETI">Etiquetas</option>
+              <option value="PUL">Pulseras</option>
+              <option value="PLU">Plumas</option>
+            </select>
+          </div><!--.orden-->
+          
+          <input type="button" id="calcular" class="button" value="Calcular">
+        </div><!--.extras-->
+
+        <div class="total">
+          <p>Resumen</p>
+          <div id="lista-productos">
+
+          </div>
+          <p>Total:</p>
+          <div id="suma-total">
+
+          </div>
+          <input type="submit" id="btnRegistro" class="button" value="Pagar">
+        </div><!--.total-->
+      </div><!--.caja-->
+    </div><!--.resumen-->
+
+
     </form>
   </section>
 
