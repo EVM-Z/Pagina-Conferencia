@@ -21,6 +21,10 @@
         var botonRegistro=document.getElementById('btnRegistro');
         var resultado=document.getElementById('lista-productos');
 
+        // Extras
+        var camisas=document.getElementById('camisa_evento')
+        var etiquetas=document.getElementById('etiquetas');
+
         calcular.addEventListener('click', calcularMontos);
 
         function calcularMontos(event){
@@ -32,14 +36,16 @@
             else{
                 var boletosDia=pase_dia.value,
                 boletos2dias=pase_dosdias.value,
-                boletoCompleto=pase_completo.value;
+                boletoCompleto=pase_completo.value,
+                cantCamisas=camisas.value,
+                cantEtiquetas=etiquetas.value;
 
                 // Comprobacion de los botones
                 // console.log("Boletos Dia: "+boletosDia);
                 // console.log("Boletos 2 dias: "+boletos2dias);
                 // console.log("Boletos Completos: "+boletoCompleto);
 
-                var totalPagar=(boletosDia*30)+(boletos2dias*45)+(boletoCompleto*50);
+                var totalPagar=(boletosDia*30)+(boletos2dias*45)+(boletoCompleto*50)+((cantCamisas*10)*.93)+(cantEtiquetas*2);
 
                 console.log(totalPagar)
             }
