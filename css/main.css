@@ -997,6 +997,9 @@ textarea {
 
   #error{
     clear: both;
+    padding: 20px;
+    text-align: center;
+    display: none;
   }
 
 
