@@ -12,7 +12,10 @@
         }).addTo(map);
         L.marker([21.197912, -86.839396]).addTo(map)
             .bindPopup('Hola Mundo.<br> desde Cancun.')
-            .openPopup();
+            .openPopup()
+            // Se muestra al pasar el mouse encima
+            .bindTooltip('Un mensaje por aqui')
+            .openTooltip();
         
         // Campos Datos de usuario
         var nombre=document.getElementById('nombre');
