@@ -4,6 +4,15 @@
     var regalo=document.getElementById('regalo');
 
     document.addEventListener('DOMContentLoaded', function(){
+
+        // Ingresando el mapa al index
+        var map = L.map('mapa').setView([51.505, -0.09], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker([51.5, -0.09]).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
         
         // Campos Datos de usuario
         var nombre=document.getElementById('nombre');
@@ -53,7 +62,7 @@
         }
 
         function validarMail(){
-            // indexOf busca en una cadena o array, un caracter en especial
+            // indexOf busca en un Array
             // El indexOF devuelve un -1 en caso de que el caracter no este
             if(this.value.indexOf("@") > -1){
                 errorDiv.style.display='none';
