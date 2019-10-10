@@ -6,12 +6,12 @@
     document.addEventListener('DOMContentLoaded', function(){
 
         // Ingresando el mapa al index
-        var map = L.map('mapa').setView([51.505, -0.09], 13);
+        var map = L.map('mapa').setView([21.197912, -86.839396], 10);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-        L.marker([51.5, -0.09]).addTo(map)
-            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        L.marker([21.197912, -86.839396]).addTo(map)
+            .bindPopup('Hola Mundo.<br> desde Cancun.')
             .openPopup();
         
         // Campos Datos de usuario
