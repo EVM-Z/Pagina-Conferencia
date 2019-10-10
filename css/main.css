@@ -991,6 +991,14 @@ textarea {
     color: #fe4918;
   }
 
+  input[disabled].button{
+    opacity: .5;
+  }
+
+  #error{
+    clear: both;
+  }
+
 
 /* ==========================================================================
    Helper classes
