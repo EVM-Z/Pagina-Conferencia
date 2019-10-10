@@ -37,6 +37,8 @@
         apellido.addEventListener('blur', validarCampos);
         email.addEventListener('blur', validarCampos);
 
+        email.addEventListener('blur', validarMail);
+
         function validarCampos(){
             if(this.value==''){
                 errorDiv.style.display='block';
@@ -47,6 +49,21 @@
             else{
                 errorDiv.style.display='none';
                 this.style.border='1px solid #cccccc';
+            }
+        }
+
+        function validarMail(){
+            // indexOf busca en una cadena o array, un caracter en especial
+            // El indexOF devuelve un -1 en caso de que el caracter no este
+            if(this.value.indexOf("@") > -1){
+                errorDiv.style.display='none';
+                this.style.border='1px solid #cccccc';
+            }
+            else{
+                errorDiv.style.display='block';
+                errorDiv.innerHTML="Debe de tener formato de correo @";
+                this.style.border='1px solid red';
+                errorDiv.style.border='1px solid red';
             }
         }
 
