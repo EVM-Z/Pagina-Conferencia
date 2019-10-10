@@ -914,7 +914,7 @@ textarea {
 
   .contenido-dia{
     padding: 20px;
-    /* display: none; */
+    display: none;
   }
 
   /* Aplicando estilos al primer hijo(div) */
