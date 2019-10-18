@@ -149,26 +149,32 @@
 
 
 $(function() {
+    // Programa de conferencia
+
     // Solo muestra el primer hijo, solo los talleres
     $('.programa-evento .info-curso:first').show();
     // Se agrega el primer elemento la clase activo por defecto
     $('.menu-programa a:first').addClass('activo');
-
     $('.menu-programa a').on('click', function() {
         // Removemos la clase activo de los elementos HTML
         $('.menu-programa a').removeClass('activo');
-
         // Se agrega la clase activo a los elemento en HTML
         $(this).addClass('activo');
         // Oculta las secciones que no se le dio click
         $('.ocultar').hide();
-
-
         // Muestra las demas secciones / conferencias y seminarios
         var enlace = $(this).attr('href');
         $(enlace).fadeIn(1000);
-
         // Evitamos el pequeño salto de pagina
         return false;
     });
+
+    // Animaciones para los numeros
+    // nth-child agarra el valor de los elementos de acuerdo a su orden 1,2,3...
+    // El 6, es el numero que vamos a animar
+    // 1200 es el tiempo que tarda la animacion
+    $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6 }, 1200);
+    $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 1200);
+    $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 1500);
+    $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 1500);
 });
