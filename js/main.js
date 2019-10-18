@@ -149,8 +149,18 @@
 
 
 $(function() {
-    // Programa de conferencia
+    // Letering
+    $('.nombre-sitio').lettering();
 
+
+
+
+
+
+
+
+
+    // Programa de conferencia
     // Solo muestra el primer hijo, solo los talleres
     $('.programa-evento .info-curso:first').show();
     // Se agrega el primer elemento la clase activo por defecto
