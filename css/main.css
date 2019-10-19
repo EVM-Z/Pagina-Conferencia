@@ -392,6 +392,15 @@ div.barra {
     padding: 20px 0;
 }
 
+.fixed {
+    /* Dejamos fijo el menu */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
 div.logo {
     width: 80%;
     float: left;
