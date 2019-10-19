@@ -153,11 +153,20 @@ $(function() {
     $('.nombre-sitio').lettering();
 
 
+    // Menu fijo
+    // Muestra la altura de la ventana
+    var windowHeight = $(window).height();
+    var barraAltura = $('.barra').innerHeight();
+
+    console.log(barraAltura);
 
 
 
-
-
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        // Mostramos los pixeles que abarca toda la pagina
+        // console.log(scroll);
+    });
 
 
     // Programa de conferencia
