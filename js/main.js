@@ -213,10 +213,17 @@ $(function() {
     // nth-child agarra el valor de los elementos de acuerdo a su orden 1,2,3...
     // El 6, es el numero que vamos a animar
     // 1200 es el tiempo que tarda la animacion
-    $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6 }, 1200);
-    $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 1200);
-    $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 1500);
-    $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 1500);
+
+    var resumenLista = jQuery('.resumen-evento');
+    if (resumenLista.length > 0) {
+        $('.resumen-evento').waypoint(function() {
+            $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6 }, 1200);
+            $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 1200);
+            $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 1500);
+            $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 1500);
+        });
+    }
+
 
 
     // Cuenta regresiva
