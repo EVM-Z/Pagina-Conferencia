@@ -38,6 +38,11 @@
         var camisas = document.getElementById('camisa_evento')
         var etiquetas = document.getElementById('etiquetas');
 
+        // Si se encuentra dicho elemento, ejecuta el digo, sino, pues nombre.
+        // if (document.getElementById('calcular')) {
+
+
+
         calcular.addEventListener('click', calcularMontos);
 
         // Blur devuelve el ultimo valor que se ingreso
@@ -144,6 +149,7 @@
                 document.getElementById(diasElegidos[i]).style.display = 'block';
             }
         }
+        // }
     });
 })();
 
