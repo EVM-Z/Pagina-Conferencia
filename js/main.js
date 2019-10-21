@@ -170,6 +170,12 @@ $(function() {
     });
 
 
+    // Menu Responsive
+    $('.menu-movil').on('click', function() {
+        $('.navegacion-principal').slideToggle();
+    });
+
+
 
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
