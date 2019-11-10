@@ -17,13 +17,14 @@
 
     <div class="calendario">
         <?php
-            $eventos=$resultado->fetch_assoc();
-        ?>
+            while($eventos=$resultado->fetch_assoc()){ ?>                
+                <pre>
+                    <?php var_dump($eventos); ?>
+                </pre>
+                
+            <?php } ?>
     </div>
 
-    <pre>
-        <?php var_dump($eventos); ?>
-    </pre>
 
     <?php
         $conn->close();
