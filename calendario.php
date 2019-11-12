@@ -44,6 +44,22 @@
                 
             <?php } ?>
 
+            <?php
+                foreach($calendario as $dia => $lista_eventos) { ?>
+                    <h3>
+                        <li class="fa fa-calendar"></li>
+                        <?php
+                            // Unix
+                            setlocale(LC_TIME, 'es_ES.UTF-8');
+                            // Windows
+                            setlocale(LC_TIME, 'spanish');
+
+                        echo strftime ("%A, %d de %B del %Y", strtotime($dia));
+                        ?>
+                    </h3>
+                <?php } ?>
+            
+
             <pre>
                 <?php var_dump($calendario); ?>
             </pre>
