@@ -1,6 +1,4 @@
 <?php include_once 'includes/templates/header.php'; ?>
-        <section class="seccion contenedor">
-            <h2>Invitados</h2>
               
             <?php
                 try {
@@ -20,10 +18,21 @@
                 
                     <li>
                         <div class="invitado">
-                            <img src="img/<?php echo $invitados['url_imagen'] ?>" alt="Imagen Invitado">
-                            <p><?php echo $invitados['nombre_invitado'] . " " . $invitados['apellido_invitado'] ?></p>
+                            <a class="invitado-info" href="#invitado<?php echo $invitados['invitado_id']; ?>">
+                                <img src="img/<?php echo $invitados['url_imagen']; ?>" alt="Imagen Invitado">
+                                <p><?php echo $invitados['nombre_invitado'] . " " . $invitados['apellido_invitado'] ?></p>
+                            </a>
                         </div>
                     </li>
+
+                    <div style="display:none;">
+                        <div class="invitado-info" id="invitado<?php echo $invitados['invitado_id']; ?>">
+
+                            <h2><?php $invitados['nombre_invitado'] . " " . $invitados['apellido_invitado']; ?></h2>
+                            <img src="img/<?php echo $invitados['url_imagen']; ?>" alt="Imagen Invitado">
+                            <p><?php echo $invitados['descripcion'] ?></p>
+                        </div>
+                    </div>
 
                 <?php } ?>
                 </ul>
@@ -34,8 +43,5 @@
                 $conn->close();
             ?>
             </div>
-      
-        </section>
-        
         
     <?php include_once 'includes/templates/footer.php'; ?>

@@ -40,10 +40,12 @@
     </script>
     <script src="js/plugins.js"></script>
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script src="js/main.js"></script>
+    
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
     <script src="js/jquery.lettering.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>

@@ -233,4 +233,8 @@ $(function() {
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
     });
+
+
+    $('.invitado-info').colorbox({ inline: true, width: "50%" });
+
 });
