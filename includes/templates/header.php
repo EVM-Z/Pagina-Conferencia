@@ -14,12 +14,23 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet">
+    
+    <?php
+        $archivo = basename($_SERVER['PHP_SELF']);
+        $pagina = str_replace(".php", "", $archivo);
+        if($pagina == 'invitados'){
+            echo '<link rel="stylesheet" href="css/colorbox.css">';
+        }
+        else if($pagina == 'conferencia'){
+            echo '<link rel="stylesheet" href="css/lightbox.css">';
+        }
+    ?>
+    
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/colorbox.css">
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
 
 
