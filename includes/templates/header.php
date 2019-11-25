@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Inicio</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,19 +14,30 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet">
+    
+    <?php
+        $archivo = basename($_SERVER['PHP_SELF']);
+        $pagina = str_replace(".php", "", $archivo);
+        if($pagina == 'invitados' || $pagina == 'index'){
+            echo '<link rel="stylesheet" href="css/colorbox.css">';
+        }
+        else if($pagina == 'conferencia'){
+            echo '<link rel="stylesheet" href="css/lightbox.css">';
+        }
+    ?>
+    
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/main.css">
-
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
 
 
     <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="<?php echo $pagina; ?>">
     <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -73,7 +87,7 @@
             <nav class="navegacion-principal clearfix">
                 <a href="conferencia.php">Conferencia</a>
                 <a href="calendario.php">Calendario</a>
-                <a href="#">Invitados</a>
+                <a href="invitados.php">Invitados</a>
                 <a href="registro.php">Reservaciones</a>
             </nav>
         </div>

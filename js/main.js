@@ -158,6 +158,11 @@ $(function() {
     // Letering
     $('.nombre-sitio').lettering();
 
+    // Agregar clase al menu
+    $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+    $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+    $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+
 
     // Menu fijo
     // Muestra la altura de la ventana
@@ -233,4 +238,8 @@ $(function() {
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
     });
+
+
+    $('.invitado-info').colorbox({ inline: true, width: "50%" });
+
 });

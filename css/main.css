@@ -986,7 +986,7 @@ p.copyright {
 
 /* Conferencia */
 
-body.conferencia .navegacion-principal .activo {
+.navegacion-principal .activo {
     border-bottom: 2px solid #fe4918;
 }
 
@@ -1182,6 +1182,14 @@ div.dia p.titulo {
 
 div.dia p {
     font-size: 1em;
+}
+
+
+/* Colorbox */
+
+div.cboxElement {
+    padding: 30px!important;
+    text-align: center;
 }
 
 
