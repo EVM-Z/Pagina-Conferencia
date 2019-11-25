@@ -2,7 +2,7 @@
 
   <section class="seccion contenedor">
     <h2>Registor de Usuarios</h2>
-    <form action="index.html" id="registro" class="registro" method="POST">
+    <form action="validar_registro.php" id="registro" class="registro" method="POST">
       <div class="registro caja clearfix" id="datos_usuario">
         <div class="campo">
           <label for="nombre">Nombre:</label>
@@ -34,7 +34,7 @@
               </ul>
               <div class="orden">
                 <label for="pase_dia">Boletos deseados:</label>
-                <input type="number" min="0" id="pase_dia" size="3" placeholder="0">
+                <input type="number" min="0" id="pase_dia" size="3" name="boletos[]" placeholder="0">
               </div>
             </div>
           </li>
@@ -50,7 +50,7 @@
               </ul>
               <div class="orden">
                 <label for="pase_completo">Boletos deseados:</label>
-                <input type="number" min="0" id="pase_completo" size="3" placeholder="0">
+                <input type="number" min="0" id="pase_completo" size="3" name="boletos[]" placeholder="0">
               </div>
             </div>
           </li>
@@ -66,7 +66,7 @@
               </ul>
               <div class="orden">
                 <label for="pase_dosdias">Boletos deseados:</label>
-                <input type="number" min="0" id="pase_dosdias" size="3" placeholder="0">
+                <input type="number" min="0" id="pase_dosdias" size="3" name="boletos[]" placeholder="0">
               </div>
             </div>
           </li>
