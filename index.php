@@ -1,83 +1,4 @@
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-    <meta charset="utf-8">
-    <title>Inicio</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
-
-
-    <meta name="theme-color" content="#fafafa">
-</head>
-
-<body>
-    <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-    <!-- Add your site or application content here -->
-
-
-    <header class="site-header">
-        <div class="hero">
-            <div class="contenido-header">
-                <nav class="redes-sociales">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </nav>
-
-                <div class="informacion-evento">
-                    <div class="clearfix">
-                        <p class="fecha"><i class="fas fa-calendar-times"></i>10-12 Dic.</p>
-                        <p class="ciudad"><i class="fas fa-map-marker-alt"></i>Cancun, Q. Roo</p>
-                    </div>
-
-                    <h1 class="nombre-sitio">cancunwebcamp</h1>
-                    <p class="slogan">La mejor conferencia de <span>Diseño Web</span></p>
-                </div>
-                <!--.informacion-evento-->
-            </div>
-        </div>
-        <!--.hero-->
-    </header>
-
-    <div class="barra">
-        <div class="contenedor clearfix">
-            <div class="logo">
-                <img src="img/logo.svg" alt="Logo GDLWebCam">
-            </div>
-            <div class="menu-movil">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <nav class="navegacion-principal clearfix">
-                <a href="#">Conferencia</a>
-                <a href="#">Calendario</a>
-                <a href="#">Invitados</a>
-                <a href="registro.html">Reservaciones</a>
-            </nav>
-        </div>
-        <!--.contenedor-->
-    </div>
-    <!--.barra-->
+<?php include_once 'includes/templates/header.php'; ?>
 
     <section class="seccion contenedor">
         <h2>La mejor conferencia de diseño web en español</h2>
@@ -333,77 +254,12 @@
         <h2>Faltan</h2>
         <div class="cuenta-regresiva contenedor">
             <ul class="clearfix">
-                <li>
-                    <p id="dias" class="numero"></p> días</li>
-                <li>
-                    <p id="horas" class="numero"></p> horas</li>
-                <li>
-                    <p id="minutos" class="numero"></p> minutos</li>
-                <li>
-                    <p id="segundos" class="numero"></p> segundos</li>
+                <li><p id="dias" class="numero"></p> días</li>
+                <li><p id="horas" class="numero"></p> horas</li>
+                <li><p id="minutos" class="numero"></p> minutos</li>
+                <li><p id="segundos" class="numero"></p> segundos</li>
             </ul>
         </div>
     </section>
 
-    <footer class="site-footer">
-        <div class="contenedor clearfix">
-            <div class="footer-informacion">
-                <h3>Sobre <span>CancunWebCamp</span></h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut ducimus temporibus fugit error voluptas impedit fuga corporis alias aperiam voluptatibus illum, magni sunt adipisci architecto suscipit sapiente facilis! Earum, alias?</p>
-            </div>
-            <div class="ultimos-tweets">
-                <h3>Últimos <span>tweets</span></h3>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sapiente obcaecati repudiandae pariatur quasi autem beatae natus assumenda aut ex deleniti repellat eius minus aspernatur cupiditate quaerat, placeat aliquid est?</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima officia natus assumenda culpa? Rem, sit in eius accusantium sapiente rerum, ab officia necessitatibus reiciendis eveniet libero et odit quo quibusdam.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quae tempore, nam consequatur quidem perferendis itaque earum, laboriosam, porro impedit qui incidunt reprehenderit! Placeat ab voluptatum eaque totam molestias voluptatibus.</li>
-                </ul>
-            </div>
-            <div class="menu">
-                <h3>Redes <span>sociales</span></h3>
-                <nav class="redes-sociales">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </nav>
-            </div>
-        </div>
-
-        <p class="copyright">
-            Todos los Derechos Reservados
-        </p>
-    </footer>
-
-
-
-
-
-    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
-    </script>
-    <script src="js/plugins.js"></script>
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.lettering.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-        window.ga = function() {
-            ga.q.push(arguments)
-        };
-        ga.q = [];
-        ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto');
-        ga('set', 'transport', 'beacon');
-        ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-
-</html>
+<?php include_once 'includes/templates/footer.php'; ?>
