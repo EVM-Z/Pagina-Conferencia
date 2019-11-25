@@ -152,20 +152,20 @@
         <div class="extras">
           <div class="orden">
             <label for="camisa_evento">Camisa del evento $10 <small>(promoción 7% de descuento)</small></label>
-            <input type="number" min="0" id="camisa_evento" size="3" placeholder="0">
+            <input type="number" min="0" id="camisa_evento" name="pedido_camisas" size="3" placeholder="0">
           </div><!--.orden-->
           <div class="orden">
             <label for="etiquetas">Paquete de 10 etiquetas<small>(HTML5, CSS3, JavaScript, Chrome)</small></label>
-            <input type="number" min="0" id="etiquetas" size="3" placeholder="0">
+            <input type="number" min="0" id="etiquetas" name="pedido_etiquetas" size="3" placeholder="0">
           </div><!--.orden-->
           <div class="orden">
             <label for="regalo">Seleccione un regalo</label>
             <br>
-            <select name="" id="regalo" required>
+            <select id="regalo" name="regalo" required>
               <option value="">Seleccione un regalo</option>
-              <option value="ETI">Etiquetas</option>
-              <option value="PUL">Pulseras</option>
-              <option value="PLU">Plumas</option>
+              <option value="2">Etiquetas</option>
+              <option value="1">Pulseras</option>
+              <option value="3">Plumas</option>
             </select>
           </div><!--.orden-->
           
@@ -181,7 +181,7 @@
           <div id="suma-total">
 
           </div>
-          <input type="submit" id="btnRegistro" class="button" value="Pagar">
+          <input type="submit" id="btnRegistro" class="button" name="submit" value="Pagar">
         </div><!--.total-->
       </div><!--.caja-->
     </div><!--.resumen-->
