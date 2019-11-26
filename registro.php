@@ -179,8 +179,9 @@
           </div>
           <p>Total:</p>
           <div id="suma-total">
-
           </div>
+
+          <input type="hidden" name="total_pedido" id="total_pedido">
           <input type="submit" id="btnRegistro" class="button" name="submit" value="Pagar">
         </div><!--.total-->
       </div><!--.caja-->
