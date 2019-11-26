@@ -27,7 +27,7 @@
     ?>
 
     <pre>
-        <?php var_dump($_POST); ?>
+        <?php var_dump($boletos); ?>
     </pre>
     <?php endif; ?>
 

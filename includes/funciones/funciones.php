@@ -10,6 +10,16 @@
             endif;
         endforeach;
 
+        $camisas=(int)$camisas;
+        if($camisas>0):
+            $json['camisas']=$camisas;
+        endif;
+
+        $etiquetas=(int)$etiquetas;
+        if($etiquetas>0):
+            $json['etiquetas']=$etiquetas;
+        endif;
+
         return json_encode($json);
     }
 ?>
