@@ -25,15 +25,23 @@
         $registro=eventos_json($eventos);
 
         try {
-            require_once('includes/funciones/bd_conexion.php');        
+            require_once('includes/funciones/bd_conexion.php');
+            // Preparamos los datos prepare
             $stmt=$conn->prepare("INSERT INTO registrados (nombre_registrado, apellido_registrado, email_registrado, fecha_registro, pases_articulos, talleres_registrados, regalo, total_pagado) VALUES (?,?,?,?,?,?,?,?) ");
+            // Decimos que datos vamos a dar bind_param
             // Las s represetan cadenas, la i representa un entero
             $stmt->bind_param("ssssssis", $nombre, $apellido, $email, $fecha, $pedido, $registro, $regalo, $total);
+            // Executamos los datos execute
+            $stmt->execute();
+            // Cerramos el stamend
+            $stmt->close();
+            // Cerramos la conexion
+            $conn->close();
         } catch (\Exception $e) {
             $error = $e->getMessage();
         }
 
-
+        
 
 
     ?>
