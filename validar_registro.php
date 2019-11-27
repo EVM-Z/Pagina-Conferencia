@@ -24,16 +24,19 @@
         $eventos=$_POST['registro'];
         $registro=eventos_json($eventos);
 
+        try {
+            require_once('includes/funciones/bd_conexion.php');        
+            $stmt=$conn->prepare("INSERT INTO registrados (nombre_registrado, apellido_registrado, email_registrado, fecha_registro, pases_articulos, talleres_registrados, regalo, total_pagado) VALUES (?,?,?,?,?,?,?,?) ");
+            // Las s represetan cadenas, la i representa un entero
+            $stmt->bind_param("ssssssis", $nombre, $apellido, $email, $fecha, $pedido, $registro, $regalo, $total);
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+        }
+
+
+
+
     ?>
-    <pre>
-        <?php var_dump($pedido); ?>
-    </pre>
-
-    <hr>
-
-    <pre>
-        <?php var_dump($registro); ?>
-    </pre>
     <?php endif; ?>
 
 </section>
