@@ -224,7 +224,7 @@
         <div class="contenido contenedor">
             <p>Regístrate al newsletter:</p>
             <h3>cancunwebcamp</h3>
-            <a href="#" class="button transparente">Registro</a>
+            <a href="#mc_embed_signup" class="boton_newsletter button transparente">Registro</a>
         </div>
         <!--.contenido-->
     </div>

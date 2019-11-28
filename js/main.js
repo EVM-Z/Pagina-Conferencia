@@ -256,4 +256,7 @@ $(function() {
 
     $('.invitado-info').colorbox({ inline: true, width: "50%" });
 
+    // Ventana al registro newsletter
+    $('.boton_newsletter').colorbox({ inline: true, width: "50%" });
+
 });
