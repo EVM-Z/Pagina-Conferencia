@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_POST['producto'], $_POST['precio'])) {
+if (!isset($_POST['submit'])) {
     exit("Hubo un error");
 }
 
@@ -15,6 +15,7 @@ use PayPal\Api\Payment;
 
 require 'includes/paypal.php';
 
+/*
 $produto = htmlspecialchars($_POST['producto']);
 $precio = htmlspecialchars($_POST['precio']);
 $precio = (int) $precio;
@@ -74,4 +75,6 @@ try {
 $aprobado = $pago->getApprovalLink();
 
 header("Location: {$aprobado}");
+*/
+
 ?>
