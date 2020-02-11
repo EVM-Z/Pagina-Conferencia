@@ -24,6 +24,7 @@ if(isset($_POST['submit'])):
         $fecha=date('Y-m-d H:i:s');
         // Pedidos
         $boletos=$_POST['boletos'];
+        $numero_boletos=$boletos;
         $camisas=$_POST['pedido_extra']['camisas']['cantidad'];
         $precioCamisa=$_POST['pedido_extra']['camisas']['precio'];
 
@@ -36,6 +37,10 @@ if(isset($_POST['submit'])):
         // Eventos
         $eventos=$_POST['registro'];
         $registro=eventos_json($eventos);
+
+        
+
+        
 
         try {
                 require_once('includes/funciones/bd_conexion.php');
@@ -51,23 +56,41 @@ if(isset($_POST['submit'])):
                 // Cerramos la conexion
                 $conn->close();
                 // Evita meter registros repetidos al cargar de nuevo una pagina
-                header('Location: validar_registro.php?exitoso=1');
+                // header('Location: validar_registro.php?exitoso=1');
         } catch (\Exception $e) {
                 $error = $e->getMessage();
         }
+
+endif;
 
 
 
 $compra = new Payer();
 $compra->setPaymentMethod('paypal');
 
-/*
+
 $articulo = new Item();
 $articulo->setName($produto)
         ->setCurrency('MXN')
         ->setQuantity(1)
         ->setPrice($precio);
 
+$i=0;
+foreach ($numero_boletos as $key => $value) {
+        if ((int) $value['cantidad'] > 0) {
+                // Crea las variables de articulo segun se vaya creando articulo1, articulo2, articulo3...
+                ${"articulo$i"} = new Item();
+                ${"articulo$i"}->setName('Pase: ' . $key)
+                                ->setCurrency('MXN')
+                                ->setQuantity((int) $value['cantidad'])
+                                ->setPrice((int) $value['precio']);
+                $i++;
+        }
+}
+
+echo $articulo0->getQuantity();
+
+/*
 $listaArticulos = new ItemList();
 $listaArticulos->setItems(array($articulo));
 
