@@ -25,9 +25,10 @@ if(isset($_POST['submit'])):
         // Pedidos
         $boletos=$_POST['boletos'];
         $numero_boletos=$boletos;
+        $pedidoExtra=$_POST['pedido_extra'];
+        
         $camisas=$_POST['pedido_extra']['camisas']['cantidad'];
         $precioCamisa=$_POST['pedido_extra']['camisas']['precio'];
-
         $etiquetas=$_POST['pedido_extra']['etiquetas']['cantidad'];
         $precioEtiquetas=$_POST['pedido_extra']['etiquetas']['precio'];
 
@@ -38,7 +39,9 @@ if(isset($_POST['submit'])):
         $eventos=$_POST['registro'];
         $registro=eventos_json($eventos);
 
-        
+        echo "<pre>";
+        var_dump($pedidoExtra);
+        echo "</pre>";
 
         
 
@@ -81,14 +84,33 @@ foreach ($numero_boletos as $key => $value) {
                 // Crea las variables de articulo segun se vaya creando articulo1, articulo2, articulo3...
                 ${"articulo$i"} = new Item();
                 ${"articulo$i"}->setName('Pase: ' . $key)
-                                ->setCurrency('MXN')
+                                ->setCurrency('USD')
                                 ->setQuantity((int) $value['cantidad'])
                                 ->setPrice((int) $value['precio']);
                 $i++;
         }
 }
 
-echo $articulo0->getQuantity();
+
+foreach ($pedidoExtra as $key => $value) {
+        if ((int) $value['cantidad'] > 0) {
+                
+                if ($key == 'camisas') {
+                        $precio = (float) $value['precio'] * .93;
+                } else{
+                        $precio = (int) $value['precio'];
+                }
+                ${"articulo$i"} = new Item();
+                ${"articulo$i"}->setName('Extras: ' . $key)
+                                ->setCurrency('USD')
+                                ->setQuantity((int) $value['cantidad'])
+                                ->setPrice($precio);
+                $i++;
+        }
+}
+
+echo $articulo2->getName();
+
 
 /*
 $listaArticulos = new ItemList();
