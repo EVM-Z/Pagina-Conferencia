@@ -38,11 +38,6 @@ if(isset($_POST['submit'])):
         // Eventos
         $eventos=$_POST['registro'];
         $registro=eventos_json($eventos);
-
-        echo "<pre>";
-        var_dump($pedidoExtra);
-        echo "</pre>";
-
         
 
         try {
@@ -54,6 +49,7 @@ if(isset($_POST['submit'])):
                 $stmt->bind_param("ssssssis", $nombre, $apellido, $email, $fecha, $pedido, $registro, $regalo, $total);
                 // Executamos los datos execute
                 $stmt->execute();
+                $ID_registro=$stmt->insert_id;
                 // Cerramos el stamend
                 $stmt->close();
                 // Cerramos la conexion
@@ -123,22 +119,24 @@ echo "</pre>";
 
 // Cantidad a pagar
 $cantidad = new Amount();
-$cantidad->setCurrency('MXN')
-        ->setTotal($total)
-        ->setDetails($detalles);
+$cantidad->setCurrency('USD')
+        ->setTotal($total);
+
+echo $total;
 
 
-/*
 $transaccion = new Transaction();
 $transaccion->setAmount($cantidad)
         ->setItemList($listaArticulos)
-        ->setDescription('Pago ')
-        ->setInvoiceNumber(uniqid());
+        ->setDescription('Pago GDLWEBCAMP')
+        ->setInvoiceNumber($ID_registro);
         
 
 $redireccionar = new RedirectUrls();
-$redireccionar->setReturnUrl(URL_SITIO . "/pago_finalizado.php?exito=true")
-        ->setCancelUrl(URL_SITIO . "/pago_finalizado.php?exito=false");
+$redireccionar->setReturnUrl(URL_SITIO . "/pago_finalizado.php?exito=true&id_pago={$ID_registro}")
+        ->setCancelUrl(URL_SITIO . "/pago_finalizado.php?exito=false$id_pago={$ID_registro}");
+
+
 
 $pago = new Payment();
 $pago->setIntent("sale")
@@ -159,5 +157,4 @@ try {
 $aprobado = $pago->getApprovalLink();
 
 header("Location: {$aprobado}");
-*/
 ?>
