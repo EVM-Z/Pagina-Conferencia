@@ -66,8 +66,6 @@ if(isset($_POST['submit'])):
 
 endif;
 
-
-
 $compra = new Payer();
 $compra->setPaymentMethod('paypal');
 
@@ -79,10 +77,14 @@ $articulo->setName($produto)
         ->setPrice($precio);
 
 $i=0;
+$arreglo_pedido=array();
 foreach ($numero_boletos as $key => $value) {
         if ((int) $value['cantidad'] > 0) {
                 // Crea las variables de articulo segun se vaya creando articulo1, articulo2, articulo3...
                 ${"articulo$i"} = new Item();
+                // Se agrega al final del arreglo
+                // En el arreglo se agregan todos los objetos que se crean
+                $arreglo_pedido[]=${"articulos$i"};
                 ${"articulo$i"}->setName('Pase: ' . $key)
                                 ->setCurrency('USD')
                                 ->setQuantity((int) $value['cantidad'])
@@ -94,13 +96,13 @@ foreach ($numero_boletos as $key => $value) {
 
 foreach ($pedidoExtra as $key => $value) {
         if ((int) $value['cantidad'] > 0) {
-                
                 if ($key == 'camisas') {
                         $precio = (float) $value['precio'] * .93;
                 } else{
                         $precio = (int) $value['precio'];
                 }
                 ${"articulo$i"} = new Item();
+                $arreglo_pedido[]=${"articulos$i"};
                 ${"articulo$i"}->setName('Extras: ' . $key)
                                 ->setCurrency('USD')
                                 ->setQuantity((int) $value['cantidad'])
@@ -109,23 +111,24 @@ foreach ($pedidoExtra as $key => $value) {
         }
 }
 
-echo $articulo2->getName();
 
-
-/*
 $listaArticulos = new ItemList();
-$listaArticulos->setItems(array($articulo));
+$listaArticulos->setItems($arreglo_pedido);
 
-$detalles = new Details();
-$detalles->setShipping($envio)
-        ->setSubtotal($precio);
+echo "<pre>";
+var_dump($listaArticulos);
+echo "</pre>";
+
+
 
 // Cantidad a pagar
 $cantidad = new Amount();
 $cantidad->setCurrency('MXN')
-        ->setTotal($precio)
+        ->setTotal($total)
         ->setDetails($detalles);
 
+
+/*
 $transaccion = new Transaction();
 $transaccion->setAmount($cantidad)
         ->setItemList($listaArticulos)
