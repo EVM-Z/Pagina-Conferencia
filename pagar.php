@@ -67,7 +67,7 @@ $compra->setPaymentMethod('paypal');
 
 
 $articulo = new Item();
-$articulo->setName($produto)
+$articulo->setName($producto)
         ->setCurrency('MXN')
         ->setQuantity(1)
         ->setPrice($precio);
@@ -111,18 +111,13 @@ foreach ($pedidoExtra as $key => $value) {
 $listaArticulos = new ItemList();
 $listaArticulos->setItems($arreglo_pedido);
 
-echo "<pre>";
-var_dump($listaArticulos);
-echo "</pre>";
-
-
 
 // Cantidad a pagar
 $cantidad = new Amount();
 $cantidad->setCurrency('USD')
         ->setTotal($total);
 
-echo $total;
+// echo $total;
 
 
 $transaccion = new Transaction();
@@ -133,8 +128,8 @@ $transaccion->setAmount($cantidad)
         
 
 $redireccionar = new RedirectUrls();
-$redireccionar->setReturnUrl(URL_SITIO . "/pago_finalizado.php&id_pago={$ID_registro}")
-                ->setCancelUrl(URL_SITIO . "/pago_finalizado.php&id_pago={$ID_registro}");
+$redireccionar->setReturnUrl(URL_SITIO . "/pago_finalizado.php?exitoso=true&id_pago={$ID_registro}")
+                ->setCancelUrl(URL_SITIO . "/pago_finalizado.php?exitoso=false&id_pago={$ID_registro}");
 
 
 
@@ -155,6 +150,6 @@ try {
 
 // Obtiene el link de aprovacion getApprovalLink
 $aprobado = $pago->getApprovalLink();
-
 header("Location: {$aprobado}");
+
 ?>
