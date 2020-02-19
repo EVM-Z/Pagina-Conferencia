@@ -29,6 +29,7 @@ if(isset($_POST['submit'])):
         
         $camisas=$_POST['pedido_extra']['camisas']['cantidad'];
         $precioCamisa=$_POST['pedido_extra']['camisas']['precio'];
+
         $etiquetas=$_POST['pedido_extra']['etiquetas']['cantidad'];
         $precioEtiquetas=$_POST['pedido_extra']['etiquetas']['precio'];
 
@@ -89,7 +90,7 @@ foreach ($numero_boletos as $key => $value) {
         }
 }
 
-
+$i=0;
 foreach ($pedidoExtra as $key => $value) {
         if ((int) $value['cantidad'] > 0) {
                 if ($key == 'camisas') {
@@ -125,6 +126,8 @@ $transaccion->setAmount($cantidad)
         ->setItemList($listaArticulos)
         ->setDescription('Pago GDLWEBCAMP')
         ->setInvoiceNumber($ID_registro);
+
+echo $transaccion->getInvoiceNumber();
         
 
 $redireccionar = new RedirectUrls();
