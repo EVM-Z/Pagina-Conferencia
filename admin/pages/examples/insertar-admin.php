@@ -1,4 +1,5 @@
 <?php
+include 'funciones/funciones.php';
 
 if (isset($_POST['agregar-admin'])) {
     $usuario = $_POST['usuario'];
@@ -11,8 +12,6 @@ if (isset($_POST['agregar-admin'])) {
     );
 
     $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
-
-    echo $password_hashed;
 }
 
 ?>
