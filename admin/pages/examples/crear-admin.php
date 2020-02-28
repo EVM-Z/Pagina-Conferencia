@@ -71,6 +71,7 @@ include 'templates/navegacion-lateral.php';
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
+                                    <input type="hidden" name="agregar-admin" value="1">
                                 <button type="submit" class="btn btn-info">Añadir</button>
                                 </div>
                                 <!-- /.card-footer -->
