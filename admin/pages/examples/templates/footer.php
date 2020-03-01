@@ -16,6 +16,10 @@
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- SweetAlert -->
+    <script src="../../dist/js/sweetalert2.all.min.js"></script>
+    <!-- Ajax -->
+    <script src="../../dist/js/admin-ajax.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
