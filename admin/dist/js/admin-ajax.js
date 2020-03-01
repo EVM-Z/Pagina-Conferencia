@@ -45,6 +45,21 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 console.log(data);
+                var resultado = data;
+
+                if (resultado.respuesta == 'exitoso') {
+                    Swal.fire(
+                        'Login Correcto',
+                        'Bievenid@ ' + resultado.usuario,
+                        'success'
+                    )
+                } else {
+                    Swal.fire(
+                        'Error',
+                        'Usuario o Password Incorrecto',
+                        'error'
+                    )
+                }
             }
         });
     });
