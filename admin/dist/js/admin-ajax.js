@@ -29,4 +29,23 @@ $(document).ready(function() {
             }
         });
     });
+
+
+    $('#login-admin').on('submit', function(e) {
+        // Evitamos que se habra el archivo insertar-admin.php desde el formulario crear-admin.php
+        e.preventDefault();
+
+        // Obtener los datos
+        var datos = $(this).serializeArray();
+
+        $.ajax({
+            type: $(this).attr('method'),
+            data: datos,
+            url: $(this).attr('action'),
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    });
 });

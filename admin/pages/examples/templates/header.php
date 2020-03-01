@@ -14,7 +14,9 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- SweetAlert -->
-  <link rel="stylesheet" href="../../css/sweetalert2.all.min.css">
+  <link rel="stylesheet" href="../../dist/css/sweetalert2.all.min.css">
+  <!-- Estilo Personazalido -->
+  <link rel="stylesheet" href="../../dist/css/admin.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>

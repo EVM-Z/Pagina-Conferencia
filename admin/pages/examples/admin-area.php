@@ -39,10 +39,6 @@ include 'templates/navegacion-lateral.php';
                         Start creating your amazing application!
                     </div>
                     <!-- /.card-body -->
-                    <div class="card-footer">
-                        Footer
-                    </div>
-                    <!-- /.card-footer-->
                 </div>
                 <!-- /.card -->
 

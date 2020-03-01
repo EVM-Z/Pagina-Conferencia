@@ -45,4 +45,9 @@ if (isset($_POST['agregar-admin'])) {
 
 }
 
+
+if (isset($_POST['login-admin'])) {
+    die(json_encode($_POST));
+}
+
 ?>
