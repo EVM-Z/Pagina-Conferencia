@@ -63,6 +63,9 @@ if (isset($_POST['login-admin'])) {
             if($existe){
                 // Si el usuario existe
                 if (password_verify($password, $password_admin)) {
+                    session_start();
+                    $_SESSION['usuario'] = $usuario_admin;
+                    $_SESSION['nombre'] = $nombre_admin;
                     $respuesta = array(
                         'respuesta' => 'exitoso',
                         'usuario' => $nombre_admin
@@ -79,6 +82,11 @@ if (isset($_POST['login-admin'])) {
                 );
             }
         }
+
+        // Cerramos las conexiones
+        $stmt->close();
+        $conn->close();
+
     } catch (Exception $e) {
         echo "Error:" . $e->getMessage();
     }
