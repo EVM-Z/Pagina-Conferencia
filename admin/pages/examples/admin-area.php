@@ -1,4 +1,7 @@
 <?php
+// Antes que nada, verificamos la sesion
+include 'funciones/sesiones.php';
+include 'funciones/funciones.php';
 include 'templates/header.php';
 include 'templates/barra-superior.php';
 include 'templates/navegacion-lateral.php';

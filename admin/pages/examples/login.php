@@ -1,4 +1,11 @@
 <?php
+session_start();
+$cerrar_sesion = $_GET['cerrar_sesion'];
+if ($cerrar_sesion) {
+    // Cerramos sesion
+    session_destroy();
+}
+
 include 'funciones/funciones.php';
 include 'templates/header.php';
 ?>
@@ -14,10 +21,10 @@ include 'templates/header.php';
         <p class="login-box-msg">Iniciar Sesión</p>
 
         <?php 
-        session_start();
-        echo "<pre>";
-        var_dump($_SESSION);
-        echo "</pre>";
+        // session_start();
+        // echo "<pre>";
+        // var_dump($_SESSION);
+        // echo "</pre>";
         ?>
 
 

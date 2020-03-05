@@ -12,7 +12,7 @@
                             <a href="../../index3.html" class="nav-link">Ajustes</a>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
-                            <a href="#" class="nav-link">Cerrar Sesión</a>
+                            <a href="login.php?cerrar_sesion=true" class="nav-link">Cerrar Sesión</a>
                         </li>
                     </ul>
 
