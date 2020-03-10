@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
+
 session_start();
 $cerrar_sesion = $_GET['cerrar_sesion'];
 if ($cerrar_sesion) {
