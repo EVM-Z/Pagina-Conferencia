@@ -1,6 +1,26 @@
 <?php
 
-if (isset($_POST['agregar-admin'])) {
+if (isset($_POST['usuario'])) {
+    $usuario = $_POST['usuario'];
+}
+if (isset($_POST['nombre'])) {
+    $nombre = $_POST['nombre'];
+}
+if (isset($_POST['id_registro'])) {
+    $id_registro = $_POST['id_registro'];
+}
+if (isset($_POST['password'])) {
+    $password = $_POST['password'];
+    $opciones_hash = array(
+        'cost' => 12
+    );
+    $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones_hash);
+}
+
+
+
+
+if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
 
     // Vemos que se envio con el metodo POST
     // die(json_encode($_POST));
@@ -43,6 +63,10 @@ if (isset($_POST['agregar-admin'])) {
 
     die(json_encode($respuesta));
 
+}
+
+if (isset($_POST['registro']) && $_POST['registro']  == 'actualizar') {
+    die(json_encode($_POST));
 }
 
 

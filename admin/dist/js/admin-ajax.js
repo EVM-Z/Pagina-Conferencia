@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#crear-admin').on('submit', function(e) {
+    $('#guardar-registro').on('submit', function(e) {
         // Evitamos que se habra el archivo insertar-admin.php desde el formulario crear-admin.php
         e.preventDefault();
 
@@ -12,6 +12,7 @@ $(document).ready(function() {
             url: $(this).attr('action'),
             dataType: 'json',
             success: function(data) {
+                console.log(data);
                 var resultado = data;
                 if (resultado.respuesta == 'exito') {
                     Swal.fire(

@@ -22,16 +22,7 @@ include 'templates/header.php';
         <div class="card-body login-card-body">
         <p class="login-box-msg">Iniciar Sesión</p>
 
-        <?php 
-        // session_start();
-        // echo "<pre>";
-        // var_dump($_SESSION);
-        // echo "</pre>";
-        ?>
-
-
-
-        <form name="login-admin-form" id="login-admin" method="POST" action="insertar-admin.php">
+        <form name="login-admin-form" id="login-admin" method="POST" action="modelo-admin.php">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" name="usuario" placeholder="Usuario">
             <div class="input-group-append">
