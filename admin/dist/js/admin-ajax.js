@@ -17,13 +17,13 @@ $(document).ready(function() {
                 if (resultado.respuesta == 'exito') {
                     Swal.fire(
                         'OK',
-                        'El usuario se creo correctamente',
+                        'Se guardó correctamente',
                         'success'
                     )
                 } else {
                     Swal.fire(
                         'Error',
-                        'El usuario no se guardo',
+                        'El usuario no se guardó',
                         'error'
                     )
                 }
@@ -35,10 +35,8 @@ $(document).ready(function() {
     $('#login-admin').on('submit', function(e) {
         // Evitamos que se habra el archivo insertar-admin.php desde el formulario crear-admin.php
         e.preventDefault();
-
         // Obtener los datos
         var datos = $(this).serializeArray();
-
         $.ajax({
             type: $(this).attr('method'),
             data: datos,
