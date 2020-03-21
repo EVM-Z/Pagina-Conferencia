@@ -62,9 +62,16 @@ include 'templates/navegacion-lateral.php';
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password" class="col-sm-2 col-form-label">Password</label>
+                            <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
                             <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-sm-2 col-form-label">Repetir Contraseña</label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control" id="repetir_password" name="repetir_password" placeholder="Vuelva a escribir su contraseña">
+                            <span id="resultado_password" class="help-block"></span>
                             </div>
                         </div>
                         
@@ -72,7 +79,7 @@ include 'templates/navegacion-lateral.php';
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <input type="hidden" name="registro" value="nuevo">
-                        <button type="submit" class="btn btn-info">Añadir</button>
+                        <button type="submit" class="btn btn-info" id="crear_registro">Añadir</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>
