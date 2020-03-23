@@ -29,7 +29,33 @@ $(document).ready(function() {
                 }
             }
         });
+    })
+
+    // Eliminar un registro
+    $('.borrar_registro').on('click', function(e) {
+        // Evitamos que abra una nueva pestaña
+        e.preventDefault();
+
+        // Creamos nuestros valores de los campos
+        var id = $(this).attr('data-id');
+        var tipo = $(this).attr('data-tipo');
+
+        // Llamado a AJAX
+        $.ajax({
+            type: 'post',
+            data: {
+                // Datos que se estan mandando
+                'id': id,
+                'registro': 'eliminar'
+            },
+            url: 'modelo-' + tipo + '.php',
+            success: function(data) {
+                console.log(data);
+            }
+        })
+
     });
+
 
 
     $('#login-admin').on('submit', function(e) {
