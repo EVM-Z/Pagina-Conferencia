@@ -40,20 +40,46 @@ $(document).ready(function() {
         var id = $(this).attr('data-id');
         var tipo = $(this).attr('data-tipo');
 
-        // Llamado a AJAX
-        $.ajax({
-            type: 'post',
-            data: {
-                // Datos que se estan mandando
-                'id': id,
-                'registro': 'eliminar'
-            },
-            url: 'modelo-' + tipo + '.php',
-            success: function(data) {
-                console.log(data);
+        Swal.fire({
+            title: '¿Estás Seguro?',
+            text: "Un registro eliminado no se puede recuperar",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.value) {
+                // Llamado a AJAX
+                $.ajax({
+                    type: 'post',
+                    data: {
+                        // Datos que se estan mandando
+                        'id': id,
+                        'registro': 'eliminar'
+                    },
+                    url: 'modelo-' + tipo + '.php',
+                    success: function(data) {
+                        var resultado = JSON.parse(data);
+                        if (resultado.respuesta == 'exito') {
+                            Swal.fire(
+                                'Eliminado',
+                                'El registro ha sido eliminado',
+                                'success'
+                            )
+                            jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('tr').remove();
+                        } else {
+                            Swal(
+                                'Error',
+                                'No se pudo eliminar',
+                                'error'
+                            )
+                        }
+                    }
+                })
             }
         })
-
     });
 
 
