@@ -9,7 +9,7 @@
                             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
-                            <a href="../../index3.html" class="nav-link">Ajustes</a>
+                            <a href="editar-admin.php?id=<?php echo $_SESSION['id']; ?>" class="nav-link">Ajustes</a>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
                             <a href="login.php?cerrar_sesion=true" class="nav-link">Cerrar Sesión</a>
