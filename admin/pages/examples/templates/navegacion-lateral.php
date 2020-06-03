@@ -14,7 +14,6 @@
                         <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        
                         <a href="#" class="d-block"><?php echo $_SESSION['nombre']; ?></a>
                     </div>
                 </div>
@@ -53,13 +52,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="lista-evento.php" class="nav-link">
                                         <i class="fas fa-list-ul"></i>
                                         <p>Ver Todos</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="editar-evento.php" class="nav-link">
                                         <i class="fas fa-plus-circle"></i>
                                         <p>Agregar</p>
                                     </a>
@@ -137,6 +136,7 @@
                         </li>
 
                         <?php if($_SESSION['nivel'] == 1): ?>
+                        <!-- El nivel 1, es para ver a los administradores -->
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-crown"></i>
