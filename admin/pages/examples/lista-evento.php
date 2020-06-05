@@ -7,7 +7,6 @@ include 'templates/barra-superior.php';
 include 'templates/navegacion-lateral.php';
 ?>
 
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
@@ -64,25 +63,26 @@ include 'templates/navegacion-lateral.php';
                 $error = $e->getMessage();
                 echo $error;
                 }
-                while($eventos = $resultado->fetch_assoc()) { ?>
-                <tr>
-                    <td><?php echo $eventos['nombre_evento']; ?></td>
-                    <td><?php echo $eventos['fecha_evento']; ?></td>
-                    <td><?php echo $eventos['hora_evento']; ?></td>
-                    <td><?php echo $eventos['cat_evento']; ?></td>
-                    <td><?php echo $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']; ?></td>
-                    
-                    <td>
-                    <a href="editar-admin.php?id=<?php echo $eventos['evento_id'] ?>" class="btn bg-gradient-warning btn-sm margin">
-                    <i class="fas fa-pencil-alt"></i>
-                    </a>
-                    <a href="#" data-id="<?php echo $eventos['evento_id']; ?>" data-tipo="evento" class="btn bg-gradient-danger btn-sm borrar_registro">
-                    <i class="fas fa-trash-alt"></i>
-                    </a>
-                    </td>
-                </tr>
 
-                <?php } ?>
+                while($eventos = $resultado->fetch_assoc()) { ?>
+                    <tr>
+                        <td><?php echo $eventos['nombre_evento']; ?></td>
+                        <td><?php echo $eventos['fecha_evento']; ?></td>
+                        <td><?php echo $eventos['hora_evento']; ?></td>
+                        <td><?php echo $eventos['cat_evento']; ?></td>
+                        <td><?php echo $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']; ?></td>
+                        
+                        <td>
+                        <a href="editar-admin.php?id=<?php echo $eventos['evento_id'] ?>" class="btn bg-gradient-warning btn-sm margin">
+                        <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a href="#" data-id="<?php echo $eventos['evento_id']; ?>" data-tipo="evento" class="btn bg-gradient-danger btn-sm borrar_registro">
+                        <i class="fas fa-trash-alt"></i>
+                        </a>
+                        </td>
+                    </tr>
+    
+                    <?php } ?>
 
             </tbody>
             <tfoot>
