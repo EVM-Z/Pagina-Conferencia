@@ -14,7 +14,7 @@ include 'templates/navegacion-lateral.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Crear Administrador</h1>
+                    <h1>Crear Evento</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -33,7 +33,7 @@ include 'templates/navegacion-lateral.php';
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Crear Administrador</h3>
+                <h3 class="card-title">Crear Evento</h3>
             </div>
             <div class="card-body">
 
@@ -47,14 +47,69 @@ include 'templates/navegacion-lateral.php';
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form class="form-horizontal" name="guardar-registro" id="guardar-registro" method="POST" action="modelo-nuevo.php">
+                    <form class="form-horizontal" name="guardar-registro" id="guardar-registro" method="POST" action="modelo-evento.php">
                         <div class="card-body">
                         <div class="form-group row">
-                            <label for="usuario" class="col-sm-2 col-form-label">Usuario</label>
+                            <label for="usuario" class="col-sm-2 col-form-label">Titulo Evento</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Razer">
+                            <input type="text" class="form-control" id="titulo_evento" name="titulo_evento" placeholder="Titulo Evento">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="nombre" class="col-sm-2 col-form-label">Categoría</label>
+                            <div class="col-sm-10">
+                            <select name="categoria_evento" id="" class="form-control seleccionar">
+                            <option value="0">- Seleccione -</option>
+                                <?php
+                                    try {
+                                        $sql = "SELECT * FROM categoria_evento ";
+                                        $resultado = $conn->query($sql);
+                                        while ($cat_evento = $resultado->fetch_assoc()) { ?>
+                                            <option value="<?php echo $cat_evento['id_categoria']; ?>">
+                                            <?php echo $cat_evento['cat_evento']; ?>
+                                            </option>
+
+
+                                        <?php }
+                                        
+                                    } catch (Exception $e) {
+                                        echo "Error: " . $e->getMessage();
+                                    }
+                                ?>
+                            </select>
+                            </div>
+                        </div>
+
+                        <!-- Date -->
+                        <div class="form-group">
+                        <label>Fecha Evento:</label>
+                            <div class="input-group date" id="fecha" data-target-input="nearest">
+                                <input type="text" name="fecha_evento" id="fecha" class="form-control datetimepicker-input" data-target="#fecha"/>
+                                <div class="input-group-append" data-target="#fecha" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.form group -->
+
+
+                        <!-- time Picker -->
+                        <div class="bootstrap-timepicker">
+                        <div class="form-group">
+                            <label>Hora</label>
+                            <div class="input-group date" id="timepicker" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#timepicker"/>
+                            <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                            </div>
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+                        <!-- /.form group -->
+                        </div>
+
+
                         <div class="form-group row">
                             <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                             <div class="col-sm-10">

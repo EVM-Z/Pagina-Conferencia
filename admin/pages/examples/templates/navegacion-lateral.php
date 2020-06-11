@@ -58,7 +58,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="editar-evento.php" class="nav-link">
+                                    <a href="crear-evento.php" class="nav-link">
                                         <i class="fas fa-plus-circle"></i>
                                         <p>Agregar</p>
                                     </a>

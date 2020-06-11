@@ -53,4 +53,18 @@ $(function() {
 
         }
     });
+
+    // Categoria Seleccion
+    $('.seleccionar').select2();
+
+    // Fecha Evento
+    $('#fecha').datetimepicker({
+        format: 'L'
+    });
+
+    // Hora
+    $('#timepicker').datetimepicker({
+        format: 'LT'
+    });
+
 });
