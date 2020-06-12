@@ -69,8 +69,6 @@ include 'templates/navegacion-lateral.php';
                                             <option value="<?php echo $cat_evento['id_categoria']; ?>">
                                             <?php echo $cat_evento['cat_evento']; ?>
                                             </option>
-
-
                                         <?php }
                                         
                                     } catch (Exception $e) {
@@ -99,7 +97,7 @@ include 'templates/navegacion-lateral.php';
                         <div class="form-group">
                             <label>Hora</label>
                             <div class="input-group date" id="timepicker" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" data-target="#timepicker"/>
+                            <input type="text" name="hora_evento" class="form-control datetimepicker-input" data-target="#timepicker"/>
                             <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
                                 <div class="input-group-text"><i class="far fa-clock"></i></div>
                             </div>
@@ -109,24 +107,26 @@ include 'templates/navegacion-lateral.php';
                         <!-- /.form group -->
                         </div>
 
-
                         <div class="form-group row">
-                            <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                            <label for="nombre" class="col-sm-2 col-form-label">Invitado o Ponente</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
-                            <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-sm-2 col-form-label">Repetir Contraseña</label>
-                            <div class="col-sm-10">
-                            <input type="password" class="form-control" id="repetir_password" name="repetir_password" placeholder="Vuelva a escribir su contraseña">
-                            <span id="resultado_password" class="help-block"></span>
+                            <select name="invitado" id="" class="form-control seleccionar">
+                            <option value="0">- Seleccione -</option>
+                                <?php
+                                    try {
+                                        $sql = "SELECT invitado_id, nombre_invitado, apellido_invitado FROM invitados ";
+                                        $resultado = $conn->query($sql);
+                                        while ($invitados = $resultado->fetch_assoc()) { ?>
+                                            <option value="<?php echo $invitados['invitado_id']; ?>">
+                                            <?php echo $invitados['nombre_invitado'] . " " . $invitados['apellido_invitado']; ?>
+                                            </option>
+                                        <?php }
+                                        
+                                    } catch (Exception $e) {
+                                        echo "Error: " . $e->getMessage();
+                                    }
+                                ?>
+                            </select>
                             </div>
                         </div>
                         
@@ -134,7 +134,7 @@ include 'templates/navegacion-lateral.php';
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <input type="hidden" name="registro" value="nuevo">
-                        <button type="submit" class="btn btn-info" id="crear_registro">Añadir</button>
+                        <button type="submit" class="btn btn-info" >Añadir</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>

@@ -79,7 +79,7 @@ include 'templates/navegacion-lateral.php';
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <input type="hidden" name="registro" value="nuevo">
-                        <button type="submit" class="btn btn-info" id="crear_registro">Añadir</button>
+                        <button type="submit" class="btn btn-info" id="crear_registro_admin">Añadir</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>

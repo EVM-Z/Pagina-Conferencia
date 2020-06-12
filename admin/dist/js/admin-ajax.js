@@ -23,7 +23,7 @@ $(document).ready(function() {
                 } else {
                     Swal.fire(
                         'Error',
-                        'El usuario no se guardó',
+                        'Hubo un error.',
                         'error'
                     )
                 }

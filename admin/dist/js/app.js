@@ -21,7 +21,7 @@ $(function() {
     });
 
     // Deshabilitamos el boton
-    $('#crear_registro').attr('disabled', true);
+    $('#crear_registro_admin').attr('disabled', true);
 
 
     $('#repetir_password').on('input', function() {
@@ -42,7 +42,7 @@ $(function() {
             campo_repetir_password.addClass('is-valid');
             $('#resultado-password').addClass('valid-feedback');
             // Habilitamos el boton
-            $('#crear_registro').attr('disabled', false);
+            $('#crear_registro_admin').attr('disabled', false);
 
         } else {
             // Password distintas
