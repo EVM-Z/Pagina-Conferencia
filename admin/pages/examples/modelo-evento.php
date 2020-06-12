@@ -2,41 +2,43 @@
 
 include 'funciones/funciones.php';
 
-if (isset($_POST['password'])) {
-    $password = $_POST['password'];
-    $opciones = array(
-        'cost' => 12
-    );
-    $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
-}
+$titulo = $_POST['titulo_evento'];
+$categoria_id = $_POST['categoria_evento'];
+$invitado_id = $_POST['invitado'];
+// Obtener la fecha
+$fecha = $_POST['fecha_evento'];
+// Cambiamos la fecha al formato de la BD
+$fecha_formateada = date('Y-m-d', strtotime($fecha));
+$hora = $_POST['hora_evento'];
 
 
 if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
-
-    die(json_encode($_POST));
-
-    try {  
-        // php statement
-        $stmt = $conn->prepare("INSERT INTO admins (usuario, nombre, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $usuario, $nombre, $password_hashed);
+    try {
+        $stmt = $conn->prepare('INSERT INTO eventos (nombre_evento, fecha_evento, hora_evento, id_cat_evento, id_inv) VALUES ( ?, ?, ?, ?, ?) ');
+        $stmt->bind_param('sssii', $titulo, $fecha_formateada, $hora, $categoria_id, $invitado_id);
         $stmt->execute();
-        $id_registro = $stmt->insert_id;
-        // En caso de que no haya registro el $id_registro=0
-        if ($id_registro > 0) {
+        $id_insertado = $stmt->insert_id;
+        if ($stmt->affected_rows) {
             $respuesta = array(
                 'respuesta' => 'exito',
-                'id_admin' => $id_registro
+                'id_insertado' => $id_insertado
             );
-        } else{
+        } else {
             $respuesta = array(
                 'respuesta' => 'error'
             );
         }
+
         $stmt->close();
         $conn->close();
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+        $respuesta = array(
+            'respuesta' => $e->getMessage()
+        );
     }
+
     die(json_encode($respuesta));
+
+    
 }
 ?>
