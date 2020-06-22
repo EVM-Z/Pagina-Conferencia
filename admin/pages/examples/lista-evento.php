@@ -73,7 +73,7 @@ include 'templates/navegacion-lateral.php';
                         <td><?php echo $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']; ?></td>
                         
                         <td>
-                        <a href="editar-admin.php?id=<?php echo $eventos['evento_id'] ?>" class="btn bg-gradient-warning btn-sm margin">
+                        <a href="editar-evento.php?id=<?php echo $eventos['evento_id'] ?>" class="btn bg-gradient-warning btn-sm margin">
                         <i class="fas fa-pencil-alt"></i>
                         </a>
                         <a href="#" data-id="<?php echo $eventos['evento_id']; ?>" data-tipo="evento" class="btn bg-gradient-danger btn-sm borrar_registro">
