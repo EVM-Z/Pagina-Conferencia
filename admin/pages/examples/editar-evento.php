@@ -127,6 +127,7 @@ include 'templates/navegacion-lateral.php';
                             <?php
                                 // Cambiamos el formato de la hora
                                 $hora = $evento['hora_evento'];
+                                // h:i a -> a nos devuelve am o pm
                                 $hora_formato = date('h:i a', strtotime($hora));
                             ?>
                             <div class="input-group date" id="timepicker" data-target-input="nearest">
@@ -173,7 +174,8 @@ include 'templates/navegacion-lateral.php';
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <input type="hidden" name="registro" value="nuevo">
+                            <input type="hidden" name="registro" value="actualizar">
+                            <input type="hidden" name="id_registro" value="<?php echo $id; ?>">
                         <button type="submit" class="btn btn-info" >Añadir</button>
                         </div>
                         <!-- /.card-footer -->
