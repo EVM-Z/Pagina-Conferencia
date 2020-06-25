@@ -176,7 +176,7 @@ include 'templates/navegacion-lateral.php';
                         <div class="card-footer">
                             <input type="hidden" name="registro" value="actualizar">
                             <input type="hidden" name="id_registro" value="<?php echo $id; ?>">
-                        <button type="submit" class="btn btn-info" >Añadir</button>
+                        <button type="submit" class="btn btn-info" >Guardar</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>

@@ -45,12 +45,12 @@ if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
     die(json_encode($respuesta));
 }
 
-//if(isset($_POST['registro']) && $_POST['registro'] == 'actualizar'){
+
 if($_POST['registro'] == 'actualizar'){
     
     try {
-        
-        $stmt = $conn->prepare('UPDATE eventos SET nombre_evento = ?, fecha_evento = ?, hora_evento = ?, id_cat_evento = ?, id_inv = ? WHERE evento_id = ? ');
+        // editado = NOW() sirve para no mostrar mensaje de error al presionar 2 veces seguidas el boton de guardar
+        $stmt = $conn->prepare('UPDATE eventos SET nombre_evento = ?, fecha_evento = ?, hora_evento = ?, id_cat_evento = ?, id_inv = ?, editado = NOW() WHERE evento_id = ? ');
         // nombre_evento = string
         // fecha_evento = string
         // hora_evento = string
