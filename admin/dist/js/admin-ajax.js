@@ -2,7 +2,6 @@ $(document).ready(function() {
     $('#guardar-registro').on('submit', function(e) {
         // Evitamos que se habra el archivo insertar-admin.php desde el formulario crear-admin.php
         e.preventDefault();
-
         // Obtener los datos
         var datos = $(this).serializeArray();
 
@@ -15,6 +14,7 @@ $(document).ready(function() {
                 console.log(data);
                 var resultado = data;
                 if (resultado.respuesta == 'exito') {
+                    // Mensaje en popup
                     Swal.fire(
                         'OK',
                         'Se guardó correctamente',
@@ -61,6 +61,7 @@ $(document).ready(function() {
                     },
                     url: 'modelo-' + tipo + '.php',
                     success: function(data) {
+                        console.log(data);
                         var resultado = JSON.parse(data);
                         if (resultado.respuesta == 'exito') {
                             Swal.fire(

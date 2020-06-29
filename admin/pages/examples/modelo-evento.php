@@ -17,6 +17,9 @@ $hora_formateada = date('H:i', strtotime($hora));
 
 $id_registro = $_POST['id_registro'];
 
+// Valor para borrar
+$id_borrar = $_POST['id'];
+
 
 if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
     try {
@@ -78,6 +81,30 @@ if($_POST['registro'] == 'actualizar'){
         $respuesta = array(
             'respuesta' => $e->getMessage()
        );
+    }
+    die(json_encode($respuesta));
+}
+
+if ($_POST['registro'] == 'eliminar') {
+    try {
+        $stmt = $conn->prepare('DELETE FROM eventos WHERE evento_id = ? ');
+        $stmt->bind_param('i', $id_borrar);
+        $stmt->execute();
+        if ($stmt->affected_rows) {
+            $respuesta = array(
+                'respuesta' => 'exito',
+                'id_eliminado' => $id_borrar
+            );
+        } else {
+            $respuesta = array(
+                'respuesta' => 'error'
+            );
+        }
+        
+    } catch (Exception $e) {
+        $respuesta = array(
+            'respuesta' => $e->getMessage()
+        );
     }
     die(json_encode($respuesta));
 }
