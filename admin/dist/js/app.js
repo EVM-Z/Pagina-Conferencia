@@ -67,4 +67,9 @@ $(function() {
         format: 'LT'
     });
 
+    // FontAwesome Iconos
+    $('#icono').iconpicker();
+    // Eliminar la clase "fade" del elemento que crea el Plugin
+    $("div.iconpicker-popover").removeClass('fade');
+
 });

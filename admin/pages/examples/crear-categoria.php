@@ -14,7 +14,7 @@ include 'templates/navegacion-lateral.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Crear Administrador</h1>
+                    <h1>Crear Categoría de Eventos</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -33,7 +33,7 @@ include 'templates/navegacion-lateral.php';
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Crear Administrador</h3>
+                <h3 class="card-title">Crear Categoría de Eventos</h3>
             </div>
             <div class="card-body">
 
@@ -47,39 +47,36 @@ include 'templates/navegacion-lateral.php';
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form class="form-horizontal" name="guardar-registro" id="guardar-registro" method="POST" action="modelo-nuevo.php">
+                    <form class="form-horizontal" name="guardar-registro" id="guardar-registro" method="POST" action="modelo-categoria.php">
                         <div class="card-body">
-                        <div class="form-group row">
-                            <label for="usuario" class="col-sm-2 col-form-label">Usuario</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Razer">
-                            </div>
-                        </div>
+                        
                         <div class="form-group row">
                             <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo">
+                            <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria" placeholder="Categoría">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
-                            <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+
+                        <div class="form-group">
+                            <label for="">Icono:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-address-book"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" id="icono" name="icono" class="form-control pull-right" placeholder="fa-icon">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-sm-2 col-form-label">Repetir Contraseña</label>
-                            <div class="col-sm-10">
-                            <input type="password" class="form-control" id="repetir_password" name="repetir_password" placeholder="Vuelva a escribir su contraseña">
-                            <span id="resultado_password" class="help-block"></span>
-                            </div>
-                        </div>
+                        
                         
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <input type="hidden" name="registro" value="nuevo">
-                        <button type="submit" class="btn btn-info" id="crear_registro_admin">Añadir</button>
+                        <button type="submit" class="btn btn-info" id="crear_registro">Añadir</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>

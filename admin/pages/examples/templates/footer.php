@@ -44,6 +44,9 @@
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 
+    <!-- FontAwesome IconPicker -->
+    <script src="../../plugins/fontawesome-iconpicker/js/fontawesome-iconpicker.min.js"></script>
+
     
 
 </body>

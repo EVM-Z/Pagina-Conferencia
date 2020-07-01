@@ -33,6 +33,9 @@
   <!-- iCheck for checkboxes and radio inputs -->
   <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 
+  <!-- FontAwesome IconPicker -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-iconpicker/css/fontawesome-iconpicker.min.css">
+
 
   
 
