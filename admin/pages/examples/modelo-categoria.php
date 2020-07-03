@@ -5,6 +5,8 @@ include_once 'funciones/funciones.php';
 $nombre_categoria = $_POST['nombre_categoria'];
 $icono = $_POST['icono'];
 
+$id_registro = $_POST['id_registro'];
+
 
 if ($_POST['registro']  == 'nuevo') {
     
@@ -40,15 +42,12 @@ if($_POST['registro'] == 'actualizar'){
     
     try {
         // editado = NOW() sirve para no mostrar mensaje de error al presionar 2 veces seguidas el boton de guardar
-        $stmt = $conn->prepare('UPDATE eventos SET nombre_evento = ?, fecha_evento = ?, hora_evento = ?, id_cat_evento = ?, id_inv = ?, editado = NOW() WHERE evento_id = ? ');
+        $stmt = $conn->prepare('UPDATE categoria_evento SET cat_evento = ?, icono = ?, editado = NOW() WHERE id_categoria = ? ');
         // nombre_evento = string
-        // fecha_evento = string
-        // hora_evento = string
-        // id_cat_evento = int
-        // id_inv = int
-        // evento_id = int
+        // icono = string
+        // id_registro = int
         
-        $stmt->bind_param('sssiii', $titulo, $fecha_formateada, $hora_formateada, $categoria_id, $invitado_id, $id_registro);
+        $stmt->bind_param('ssi', $nombre_categoria, $icono, $id_registro);
         $stmt->execute();
         
         if ($stmt->affected_rows) {
