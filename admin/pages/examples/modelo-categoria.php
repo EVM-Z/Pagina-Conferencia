@@ -7,6 +7,8 @@ $icono = $_POST['icono'];
 
 $id_registro = $_POST['id_registro'];
 
+$id_borrar = $_POST['id'];
+
 
 if ($_POST['registro']  == 'nuevo') {
     
@@ -73,7 +75,7 @@ if($_POST['registro'] == 'actualizar'){
 
 if ($_POST['registro'] == 'eliminar') {
     try {
-        $stmt = $conn->prepare('DELETE FROM eventos WHERE evento_id = ? ');
+        $stmt = $conn->prepare('DELETE FROM categoria_evento WHERE id_categoria = ? ');
         $stmt->bind_param('i', $id_borrar);
         $stmt->execute();
         if ($stmt->affected_rows) {
