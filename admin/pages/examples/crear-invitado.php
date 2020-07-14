@@ -14,7 +14,7 @@ include 'templates/navegacion-lateral.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Crear Categoría de Eventos</h1>
+                    <h1>Crear Invitado</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -33,7 +33,7 @@ include 'templates/navegacion-lateral.php';
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Crear Categoría de Eventos</h3>
+                <h3 class="card-title">Crear Invitado</h3>
             </div>
             <div class="card-body">
 
@@ -47,29 +47,44 @@ include 'templates/navegacion-lateral.php';
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form class="form-horizontal" name="guardar-registro" id="guardar-registro" method="POST" action="modelo-categoria.php">
+                    <form class="form-horizontal" name="guardar-registro" id="guardar-registro" method="POST" action="modelo-invitado.php">
                         <div class="card-body">
                         
                         <div class="form-group row">
-                            <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                            <label for="nombre_invitado" class="col-sm-2 col-form-label">Nombre</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria" placeholder="Categoría">
+                            <input type="text" class="form-control" id="nombre_invitado" name="nombre_invitado" placeholder="Nombre">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="apellido_invitado" class="col-sm-2 col-form-label">Apellido</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="apellido_invitado" name="apellido_invitado" placeholder="Nombre">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="apellido_invitado" class="col-sm-2 col-form-label">Biografía</label>
+                            <div class="col-sm-10">
+                            <textarea  class="form-control" name="biografia_invitado" id="biografia_invitado" cols="" rows="8" placeholder="Biografía"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="">Icono:</label>
+                            <label for="imagen_invitado">Imagen</label>
                             <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-address-book"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <input type="text" id="icono" name="icono" class="form-control pull-right" placeholder="fa-icon">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="imagen_invitado" name="archivo_imagen">
+                                <label class="custom-file-label" for="imagen_invitado">Elije una imagen</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">Subir</span>
+                            </div>
                             </div>
                         </div>
+
+                        
                         
                         
                         </div>
