@@ -47,7 +47,7 @@ include 'templates/navegacion-lateral.php';
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form class="form-horizontal" name="guardar-registro" id="guardar-registro" method="POST" action="modelo-invitado.php">
+                    <form class="form-horizontal" name="guardar-registro" id="guardar-registro-archivo" method="POST" action="modelo-invitado.php" enctype="multipart/form-data">
                         <div class="card-body">
                         
                         <div class="form-group row">

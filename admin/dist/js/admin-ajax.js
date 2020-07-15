@@ -3,6 +3,7 @@ $(document).ready(function() {
         // Evitamos que se habra el archivo insertar-admin.php desde el formulario crear-admin.php
         e.preventDefault();
         // Obtener los datos
+        // serializeArray() justa todos los datos en un arreglo
         var datos = $(this).serializeArray();
 
         $.ajax({
@@ -10,6 +11,47 @@ $(document).ready(function() {
             data: datos,
             url: $(this).attr('action'),
             dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                var resultado = data;
+                if (resultado.respuesta == 'exito') {
+                    // Mensaje en popup
+                    Swal.fire(
+                        'OK',
+                        'Se guardó correctamente',
+                        'success'
+                    )
+                } else {
+                    Swal.fire(
+                        'Error',
+                        'Hubo un error.',
+                        'error'
+                    )
+                }
+            }
+        });
+    })
+
+    // Se ejecuta cuando hay un archivo
+    $('#guardar-registro-archivo').on('submit', function(e) {
+        // Evitamos que se habra el archivo insertar-admin.php desde el formulario crear-admin.php
+        e.preventDefault();
+
+        // Obtener los datos
+        // Crea un nuevo form con los valores
+        var datos = new FormData(this);
+
+        $.ajax({
+            type: $(this).attr('method'),
+            data: datos,
+            url: $(this).attr('action'),
+            dataType: 'json',
+            // Propiedas a agregar cuando se usa archivos
+            contentType: false,
+            processData: false,
+            async: true,
+            cache: false,
+
             success: function(data) {
                 console.log(data);
                 var resultado = data;
