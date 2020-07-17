@@ -30,7 +30,7 @@ $(document).ready(function() {
                 }
             }
         });
-    })
+    });
 
     // Se ejecuta cuando hay un archivo
     $('#guardar-registro-archivo').on('submit', function(e) {
@@ -71,7 +71,7 @@ $(document).ready(function() {
                 }
             }
         });
-    })
+    });
 
     // Eliminar un registro
     $('.borrar_registro').on('click', function(e) {
