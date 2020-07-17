@@ -2,33 +2,56 @@
 error_reporting(E_ALL ^ E_NOTICE);
 include_once 'funciones/funciones.php';
 
-$nombre_categoria = $_POST['nombre_categoria'];
-$icono = $_POST['icono'];
-
-$id_registro = $_POST['id_registro'];
-
-$id_borrar = $_POST['id'];
-
+// Los valores de la derecha son de la consola del navegador
+// Son los valores enviados
+$nombre = $_POST['nombre_invitado'];
+$apellido = $_POST['apellido_invitado'];
+$biografia = $_POST['biografia_invitado'];
 
 if ($_POST['registro']  == 'nuevo') {
-    $respuesta = array(
-        'post' => $_POST,
-        'file' => $_FILES
-    );
+    // Comprobar que los datos se estan enviando
+    // $respuesta = array(
+    //     'post' => $_POST,
+    //     'file' => $_FILES
+    // );
+    // die(json_encode($respuesta));
 
-    die(json_encode($respuesta));
+    $directorio = "../../../img/invitados/";
+
+    // is_dir verifica si el directorio existe
+    if (!is_dir($directorio)) {
+        // Si no existe el directorio, se crea
+        mkdir($directorio, 0755, true);
+    } else {
+        $result = "No se cargo";
+    }
+
+    if (move_uploaded_file($_FILES['archivo_imagen']['tmp_name'], $directorio . $_FILES['archivo_imagen']['name'])) {
+        $imagen_url = $_FILES['archivo_imagen']['name'];
+        $imagen_resultado = "Se subió correctamente";
+    } else {
+        $respuesta = array(
+            'respuesta' => error_get_last()
+        );
+    }
 
     
     try {
-        $stmt = $conn->prepare('INSERT INTO categoria_evento (cat_evento, icono) VALUES (?, ?) ');
-        $stmt->bind_param("ss", $nombre_categoria, $icono);
+        $stmt = $conn->prepare('INSERT INTO invitados (nombre_invitado, apellido_invitado, descripcion, url_imagen) VALUES (?, ?, ?, ?) ');
+        // Las variables estan declaradas de forma global
+        $stmt->bind_param("ssss", $nombre, $apellido, $biografia, $imagen_url);
         $stmt->execute();
         $id_insertado = $stmt->insert_id;
 
+        
+
         if ($stmt->affected_rows) {
+            
             $respuesta = array(
                 'respuesta' => 'exito',
-                'id_insertado' => $id_insertado
+                'id_insertado' => $id_insertado,
+                // Variable reclarado en move_uploaded_file
+                'resultado_imagen' => $imagen_resultado
             );
         } else {
             $respuesta = array(
