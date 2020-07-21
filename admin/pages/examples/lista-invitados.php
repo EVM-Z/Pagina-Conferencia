@@ -62,10 +62,10 @@ include 'templates/navegacion-lateral.php';
                     <td><?php echo $invitado['descripcion']; ?></td>
                     <td><?php echo $invitado['url_imagen']; ?></td>
                     <td>
-                      <a href="editar-categoria.php?id=<?php echo $invitado['id_categoria'] ?>" class="btn bg-gradient-warning btn-sm margin">
+                      <a href="editar-invitado.php?id=<?php echo $invitado['invitado_id'] ?>" class="btn bg-gradient-warning btn-sm margin">
                       <i class="fas fa-pencil-alt"></i>
                       </a>
-                      <a href="#" data-id="<?php echo $invitado['id_categoria']; ?>" data-tipo="categoria" class="btn bg-gradient-danger btn-sm borrar_registro">
+                      <a href="#" data-id="<?php echo $invitado['invitado_id']; ?>" data-tipo="invitado" class="btn bg-gradient-danger btn-sm borrar_registro">
                       <i class="fas fa-trash-alt"></i>
                       </a>
                     </td>

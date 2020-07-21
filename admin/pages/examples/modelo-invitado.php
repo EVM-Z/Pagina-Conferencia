@@ -10,12 +10,14 @@ $biografia = $_POST['biografia_invitado'];
 
 if ($_POST['registro']  == 'nuevo') {
     // Comprobar que los datos se estan enviando
-    // $respuesta = array(
-    //     'post' => $_POST,
-    //     'file' => $_FILES
-    // );
-    // die(json_encode($respuesta));
-
+    /*
+    $respuesta = array(
+        'post' => $_POST,
+        'file' => $_FILES
+    );
+    die(json_encode($respuesta));
+    */
+    
     $directorio = "../../../img/invitados/";
 
     // is_dir verifica si el directorio existe
