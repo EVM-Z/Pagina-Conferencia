@@ -60,7 +60,7 @@ include 'templates/navegacion-lateral.php';
                     <tr>
                     <td><?php echo $invitado['nombre_invitado'] . " " . $invitado['apellido_invitado']; ?></td>
                     <td><?php echo $invitado['descripcion']; ?></td>
-                    <td><?php echo $invitado['url_imagen']; ?></td>
+                    <td><img src="../../../img/invitados/<?php echo $invitado['url_imagen']; ?>" width="100" alt=""></td>
                     <td>
                       <a href="editar-invitado.php?id=<?php echo $invitado['invitado_id'] ?>" class="btn bg-gradient-warning btn-sm margin">
                       <i class="fas fa-pencil-alt"></i>

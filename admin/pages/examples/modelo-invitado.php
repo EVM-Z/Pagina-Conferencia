@@ -8,6 +8,8 @@ $nombre = $_POST['nombre_invitado'];
 $apellido = $_POST['apellido_invitado'];
 $biografia = $_POST['biografia_invitado'];
 
+$id_registro = $_POST['id_registro'];
+
 if ($_POST['registro']  == 'nuevo') {
     // Comprobar que los datos se estan enviando
     /*
@@ -73,18 +75,44 @@ if ($_POST['registro']  == 'nuevo') {
 
 
 if($_POST['registro'] == 'actualizar'){
+
+    $directorio = "../../../img/invitados";
+
+    // is_dir verifica si el directorio existe
+    if (!is_dir($directorio)) {
+        // Si no existe el directorio, se crea
+        mkdir($directorio, 0755, true);
+    } else {
+        $result = "No se cargo";
+    }
+
+    if (move_uploaded_file($_FILES['archivo_imagen']['tmp_name'], $directorio . $_FILES['archivo_imagen']['name'])) {
+        $imagen_url = $_FILES['archivo_imagen']['name'];
+        $imagen_resultado = "Se subió correctamente";
+    } else {
+        $respuesta = array(
+            'respuesta' => error_get_last()
+        );
+    }
+
+
     
     try {
-        // editado = NOW() sirve para no mostrar mensaje de error al presionar 2 veces seguidas el boton de guardar
-        $stmt = $conn->prepare('UPDATE categoria_evento SET cat_evento = ?, icono = ?, editado = NOW() WHERE id_categoria = ? ');
-        // nombre_evento = string
-        // icono = string
-        // id_registro = int
+
+        if ($_FILES['archivo_imagen']['size'] > 0) {
+            // Cuando cambia la iamgen
+            $stmt = $conn->prepare('UPDATE invitados SET nombre_invitado = ?, apellido_invitado = ?, descripcion = ?, url_imagen = ? WHERE invitado_id = ? ');
+            $stmt->bind_param("ssssi", $nombre, $apellido, $biografia, $imagen_url, $id_registro);
+        } else {
+            // Cuando no cambia la imagen
+            $stmt = $conn->prepare('UPDATE invitados SET nombre_invitado = ?, apellido_invitado = ?, descripcion = ? WHERE invitado_id = ?');
+            $stmt->bind_param("sssi", $nombre, $apellido, $biografia, $id_registro);
+        }
+
+        $estado = $stmt->execute();
         
-        $stmt->bind_param('ssi', $nombre_categoria, $icono, $id_registro);
-        $stmt->execute();
-        
-        if ($stmt->affected_rows) {
+        if ($estado == true) {
+            // Si se hizo una modificacion
             $respuesta = array(
                 'respuesta' => 'exito',
                 'id_actualizado' => $id_registro
