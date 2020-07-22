@@ -10,7 +10,6 @@ $biografia = $_POST['biografia_invitado'];
 
 $id_registro = $_POST['id_registro'];
 
-
 $id_borrar = $_POST['id'];
 
 if ($_POST['registro']  == 'nuevo') {
