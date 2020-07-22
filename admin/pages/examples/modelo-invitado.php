@@ -10,6 +10,9 @@ $biografia = $_POST['biografia_invitado'];
 
 $id_registro = $_POST['id_registro'];
 
+
+$id_borrar = $_POST['id'];
+
 if ($_POST['registro']  == 'nuevo') {
     // Comprobar que los datos se estan enviando
     /*
@@ -95,8 +98,6 @@ if($_POST['registro'] == 'actualizar'){
         );
     }
 
-
-    
     try {
 
         if ($_FILES['archivo_imagen']['size'] > 0) {
@@ -135,7 +136,7 @@ if($_POST['registro'] == 'actualizar'){
 
 if ($_POST['registro'] == 'eliminar') {
     try {
-        $stmt = $conn->prepare('DELETE FROM categoria_evento WHERE id_categoria = ? ');
+        $stmt = $conn->prepare('DELETE FROM invitados WHERE invitado_id = ? ');
         $stmt->bind_param('i', $id_borrar);
         $stmt->execute();
         if ($stmt->affected_rows) {
