@@ -60,7 +60,7 @@ include 'templates/navegacion-lateral.php';
                     <td><?php echo $categoria['cat_evento']; ?></td>
                     <td><i class="fa <?php echo $categoria['icono']; ?>"></i></td>
                     <td>
-                      <a href="editar-categoria.php?id=<?php echo $categoria['id_categoria'] ?>" class="btn bg-gradient-warning btn-sm margin">
+                      <a href="editar-categoria.php?id=<?php echo $categoria['id_categoria']; ?>" class="btn bg-gradient-warning btn-sm margin">
                       <i class="fas fa-pencil-alt"></i>
                       </a>
                       <a href="#" data-id="<?php echo $categoria['id_categoria']; ?>" data-tipo="categoria" class="btn bg-gradient-danger btn-sm borrar_registro">

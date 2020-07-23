@@ -59,7 +59,7 @@ include 'templates/navegacion-lateral.php';
                     <td><?php echo $admin['usuario']; ?></td>
                     <td><?php echo $admin['nombre']; ?></td>
                     <td>
-                      <a href="editar-admin.php?id=<?php echo $admin['id_admin'] ?>" class="btn bg-gradient-warning btn-sm margin">
+                      <a href="editar-admin.php?id=<?php echo $admin['id_admin']; ?>" class="btn bg-gradient-warning btn-sm margin">
                       <i class="fas fa-pencil-alt"></i>
                       </a>
                       <a href="#" data-id="<?php echo $admin['id_admin']; ?>" data-tipo="admin" class="btn bg-gradient-danger btn-sm borrar_registro">
