@@ -1080,6 +1080,13 @@ div.paquetes .table-precio input {
     font-weight: bold;
 }
 
+.contenido-dia .autor {
+    font-weight: bold;
+    font-family: Arial, Helvetica;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
 
 /* Resumen Registro */
 
