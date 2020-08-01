@@ -47,6 +47,9 @@
     <!-- FontAwesome IconPicker -->
     <script src="../../plugins/fontawesome-iconpicker/js/fontawesome-iconpicker.min.js"></script>
 
+    <!-- Cotizador -->
+    <script src="../../../js/cotizador.js" ></script>
+
     
 
 </body>

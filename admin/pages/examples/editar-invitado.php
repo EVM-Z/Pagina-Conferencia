@@ -91,7 +91,7 @@ include 'templates/navegacion-lateral.php';
 
                         <div class="form-group">
                             <label for="apellido_invitado" class="col-sm-2 col-form-label">Imagen</label>
-                            <img src="../../../img/<?php echo $invitado['url_imagen']; ?>" width="200">
+                            <img src="../../../img/invitados/<?php echo $invitado['url_imagen']; ?>" width="200">
                         </div>
 
                         <div class="form-group">
