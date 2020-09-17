@@ -71,6 +71,9 @@ include 'templates/navegacion-lateral.php';
                             </div>
                         </div>
 
+                        <!-- Nos sirve para mostrar en mensaje de error -->
+                        <div id="error"></div>
+
                         <div class="form-group row">
                             <div class="paquetes" id="paquetes">
                                 <h3>Elige el número de boletos</h3>
@@ -176,7 +179,7 @@ include 'templates/navegacion-lateral.php';
                                                         <p><?php echo $tipo; ?></p>
                                                         <?php foreach ($evento_dia as $evento) { ?>
                                                         <label for="checkboxPrimary2" class="autor">
-                                                            <input type="checkbox" name="registro[]" id="<?php echo $evento['id']; ?>" value="<?php echo $evento['id']; ?>">
+                                                            <input type="checkbox" name="registro_evento[]" id="<?php echo $evento['id']; ?>" value="<?php echo $evento['id']; ?>">
                                                             <time><?php echo $evento['hora']; ?></time>
                                                             <?php echo $evento['nombre_evento']; ?>
                                                             <br>
