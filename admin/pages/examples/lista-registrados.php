@@ -88,9 +88,13 @@ include 'templates/navegacion-lateral.php';
                               'camisas' => 'Camisas',
                               'etiquetas' => 'Etiquetas'
                             );
-
+                            
                             foreach ($articulos as $llave => $articulo) {
-                              echo $articulo . " - " . $arreglo_articulos[$llave] . "<br>";
+                              if (array_key_exists('cantidad', $articulo)) {
+                                echo $articulo['cantidad'] . " " . $arreglo_articulos[$llave] . "<br>";
+                              } else{
+                                echo $articulo . " - " . $arreglo_articulos[$llave] . "<br>";
+                              } 
                             }
                           ?>
                         </td>
@@ -100,7 +104,7 @@ include 'templates/navegacion-lateral.php';
                             $talleres = json_decode($eventos_resultado, true);
 
                             $talleres = implode("', '", $talleres['eventos']);
-                            $sql_talleres = "SELECT nombre_evento, fecha_evento, hora_evento FROM eventos WHERE clave IN ('$talleres') ";
+                            $sql_talleres = "SELECT nombre_evento, fecha_evento, hora_evento FROM eventos WHERE clave IN ('$talleres') OR evento_id IN ('$talleres') ";
                             
                             $resultado_talleres = $conn->query($sql_talleres);
                             
@@ -111,9 +115,9 @@ include 'templates/navegacion-lateral.php';
                           ?>
                         </td>
                         <td><?php echo $registrado['nombre_regalo']; ?></td>
-                        <td><?php echo $registrado['total_pagado']; ?></td>
+                        <td><?php echo (float) $registrado['total_pagado']; ?></td>
                         <td>
-                            <a href="editar-registrado.php?id=<?php echo $registrado['ID_registrado']; ?>" class="btn bg-gradient-warning btn-sm margin">
+                            <a href="editar-registro.php?id=<?php echo $registrado['ID_registrado']; ?>" class="btn bg-gradient-warning btn-sm margin">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             <a href="#" data-id="<?php echo $registrado['ID_registrado']; ?>" data-tipo="registrado" class="btn bg-gradient-danger btn-sm borrar_registro">

@@ -15,10 +15,33 @@
 
         $etiquetas=(int)$etiquetas;
         if($etiquetas>0):
-            $json['etiquetas']=$etiquetas;
+            $total_boletos['etiquetas']=$etiquetas;
         endif;
 
         return json_encode($total_boletos);
+    }
+
+    function formatear_pedido($articulos){
+        $articulos=json_decode($articulos, true);
+        $pedido='';
+
+        if (array_key_exists('un_dia', $articulos)):
+            $pedido .= 'Pase(s) 1 dia: ' . $articulos['un_dia'] . "<br>";
+        endif;
+        if(array_key_exists('pase_2dias', $articulos)):
+            $pedido .= 'Pase(s) 2 dias: ' . $articulos['pase_2dias'] . "<br>";
+        endif;
+        if(array_key_exists('pase_completo', $articulos)):
+            $pedido .= 'Pase(s) Completos: ' . $articulos['pase_completo'] . "<br>";
+        endif;
+        if(array_key_exists('camisas', $articulos)):
+            $pedido .= 'Camisas: ' . $articulos['camisas'] . "<br>";
+        endif;
+        if(array_key_exists('etiquetas', $articulos)):
+            $pedido .= 'Etiquetas: ' . $articulos['etiquetas'] . "<br>";
+        endif;
+
+        return $pedido;
     }
 
 
@@ -29,5 +52,16 @@
         endforeach;
 
         return json_encode($eventos_json);
+    }
+
+    function formatear_eventos_a_sql($eventos){
+        $eventos = json_decode($eventos, true);
+        $sql = "SELECT `nombre_evento` FROM eventos WHERE clave = 'a'";
+
+        foreach($eventos['eventos'] as $evento):
+            $sql .= " OR clave = '{$evento}'";
+        endforeach;
+
+        return $sql;
     }
 ?>

@@ -21,6 +21,9 @@ $regalo = $_POST['regalo'];
 $eventos = $_POST['registro_evento'];
 $registro_eventos = eventos_json($eventos);
 
+// $fecha_registro = $_POST['fecha_registro'];
+// $id_registro = $_POST['id_registro'];
+
 if ($_POST['registro']  == 'nuevo') {
     
     try {
@@ -53,6 +56,8 @@ if ($_POST['registro']  == 'nuevo') {
 
 
 if($_POST['registro'] == 'actualizar'){
+    
+    die(json_encode($_POST));
     
     try {
         // editado = NOW() sirve para no mostrar mensaje de error al presionar 2 veces seguidas el boton de guardar

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2020 a las 18:51:49
+-- Tiempo de generación: 26-09-2020 a las 00:43:32
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.8
 
@@ -202,7 +202,12 @@ INSERT INTO `registrados` (`ID_registrado`, `nombre_registrado`, `apellido_regis
 (5, 'Eliseo', 'VM', 'elyzeo.vm@gmail.com', '2020-02-19 15:21:47', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":2,\"etiquetas\":2}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '52.6', 1),
 (6, 'EVM', 'VM', 'elyzeo.vm@gmail.com', '2020-02-19 17:05:06', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":1}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '41.3', 0),
 (7, 'Eliseo', 'VM', 'elyzeo.vm@gmail.com', '2020-02-19 17:05:28', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":2,\"etiquetas\":2}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '52.6', 0),
-(8, '', '', '', '2020-07-28 21:48:44', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":2}', '{\"eventos\":[\"7\",\"8\",\"9\",\"15\"]}', 2, '138.3', 0);
+(8, '', '', '', '2020-07-28 21:48:44', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":2}', '{\"eventos\":[\"7\",\"8\",\"9\",\"15\"]}', 2, '138.3', 0),
+(9, 'Eliseo2', 'VM2', 'elyzeo.vm@gmail.com', '2020-09-17 14:06:12', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"1\"},\"pase_2dias\":{\"cantidad\":\"1\"},\"camisas\":1}', '{\"eventos\":[\"2\",\"8\",\"9\",\"5\",\"17\",\"18\"]}', 2, '136.3', 1),
+(10, 'Eliseo3', 'VM3', 'elyzeo.vm@gmail.com', '2020-09-18 10:11:27', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"1\"},\"pase_2dias\":{\"cantidad\":\"1\"},\"camisas\":1}', '{\"eventos\":[\"2\",\"8\",\"9\",\"4\",\"5\",\"17\",\"18\",\"19\",\"12\"]}', 2, '136.3', 1),
+(11, 'Eliseo4', 'VM4', 'elyzeo.vm@gmail.com', '2020-09-23 06:44:01', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"2\"},\"pase_2dias\":{\"cantidad\":\"3\"},\"camisas\":1}', '{\"eventos\":[\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 3, '278.3', 1),
+(12, '5', '5', 'elyzeo.vm@gmail.com', '2020-09-25 12:20:16', '{\"un_dia\":{\"cantidad\":\"5\"},\"pase_completo\":{\"cantidad\":\"5\"},\"pase_2dias\":{\"cantidad\":\"5\"},\"camisas\":5}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 3, '681.5', 1),
+(13, '10', '10', 'elyzeo.vm@gmail.com', '2020-09-25 12:58:24', '{\"un_dia\":{\"cantidad\":\"10\"},\"pase_completo\":{\"cantidad\":\"10\"},\"pase_2dias\":{\"cantidad\":\"10\"},\"camisas\":10}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 3, '1363', 1);
 
 --
 -- Índices para tablas volcadas
@@ -286,7 +291,7 @@ ALTER TABLE `regalos`
 -- AUTO_INCREMENT de la tabla `registrados`
 --
 ALTER TABLE `registrados`
-  MODIFY `ID_registrado` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_registrado` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
