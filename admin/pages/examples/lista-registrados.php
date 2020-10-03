@@ -90,7 +90,7 @@ include 'templates/navegacion-lateral.php';
                             );
                             
                             foreach ($articulos as $llave => $articulo) {
-                              if (array_key_exists('cantidad', $articulo)) {
+                              if (is_array($articulo) && array_key_exists('cantidad', $articulo)) {
                                 echo $articulo['cantidad'] . " " . $arreglo_articulos[$llave] . "<br>";
                               } else{
                                 echo $articulo . " - " . $arreglo_articulos[$llave] . "<br>";

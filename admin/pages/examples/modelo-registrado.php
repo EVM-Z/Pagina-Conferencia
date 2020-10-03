@@ -21,8 +21,8 @@ $regalo = $_POST['regalo'];
 $eventos = $_POST['registro_evento'];
 $registro_eventos = eventos_json($eventos);
 
-// $fecha_registro = $_POST['fecha_registro'];
-// $id_registro = $_POST['id_registro'];
+$fecha_registro = $_POST['fecha_registro'];
+$id_registro = $_POST['id_registro'];
 
 if ($_POST['registro']  == 'nuevo') {
     
@@ -56,17 +56,11 @@ if ($_POST['registro']  == 'nuevo') {
 
 
 if($_POST['registro'] == 'actualizar'){
-    
-    die(json_encode($_POST));
-    
+
     try {
-        // editado = NOW() sirve para no mostrar mensaje de error al presionar 2 veces seguidas el boton de guardar
-        $stmt = $conn->prepare('UPDATE categoria_evento SET cat_evento = ?, icono = ?, editado = NOW() WHERE id_categoria = ? ');
-        // nombre_evento = string
-        // icono = string
-        // id_registro = int
+        $stmt = $conn->prepare('UPDATE registrados SET nombre_registroado = ?, apellido_registrado = ?, email_registrado = ?, fecha_registro = ?, pases_articulos = ?, talleres_registrados = ?, regalo = ?, total_pagado = ?, pagado = 1 WHERE ID_registrado = ? ');
         
-        $stmt->bind_param('ssi', $nombre_categoria, $icono, $id_registro);
+        $stmt->bind_param('ssssssisi', $nombre, $apellido, $email, $fecha_registro, $pedido, $registro_eventos, $regalo, $total, $id_registro);
         $stmt->execute();
         
         if ($stmt->affected_rows) {
