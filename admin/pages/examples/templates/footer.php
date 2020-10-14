@@ -50,6 +50,9 @@
     <!-- Cotizador -->
     <script src="../../../js/cotizador.js" ></script>
 
+    <!-- ChartJS -->
+    <script src="../../plugins/chart.js/Chart.min.js"></script>
+
     
 
 </body>
