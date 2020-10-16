@@ -1,4 +1,23 @@
-<!doctype html>
+<?php
+    // Definir un nombre para cachear
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php", "", $archivo);
+
+    // Definir archivo para cachear (puede ser .php también)
+    $archivoCache = 'cache/'.$pagina.'.html';
+    // Cuanto tiempo deberá estar este archivo almacenado
+    // El tiempo esta en segundos 3600 s = 10 h
+    $tiempo = 36000;
+    // Checar que el archivo exista, el tiempo sea el adecuado y muestralo
+    if (file_exists($archivoCache) && time() - $tiempo < filemtime($archivoCache)) {
+    include($archivoCache);
+        exit;
+    }
+    // Si el archivo no existe, o el tiempo de cacheo ya se venció genera uno nuevo
+    ob_start();
+?>
+
+<!DOCTYPE html>
 <html class="no-js" lang="">
 
 <head>
@@ -22,13 +41,15 @@
             echo '<link rel="stylesheet" href="css/colorbox.css">';
         }
         else if($pagina == 'conferencia'){
-            echo '<link rel="stylesheet" href="css/lightbox.css">';
+            echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" />';
         }
     ?>
     
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-1/css/fontawesome.min.css" integrity="sha512-QDQ0562x770FtnCCP199moaEUwDztn4b20jnXDDwYjPtTgUAAAVjyYX6zurspEoOdlqOxQ6YMRJ8GnISDDjsew==" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />

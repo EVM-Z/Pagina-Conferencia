@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2020 a las 00:43:32
+-- Tiempo de generación: 16-10-2020 a las 23:58:41
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.8
 
@@ -195,10 +195,10 @@ CREATE TABLE `registrados` (
 --
 
 INSERT INTO `registrados` (`ID_registrado`, `nombre_registrado`, `apellido_registrado`, `email_registrado`, `fecha_registro`, `pases_articulos`, `talleres_registrados`, `regalo`, `total_pagado`, `pagado`) VALUES
-(1, 'Eliseo', 'VM', 'elyzeo.vm@gmail.com', '2020-02-18 16:29:14', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":1}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '41.3', 1),
+(1, 'Eliseo', 'VM', 'elyzeo.vm@gmail.com', '2020-02-18 16:29:14', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":1}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '41.3', 0),
 (2, 'Eliseo', 'VM', 'elyzeo.vm@gmail.com', '2020-02-18 16:33:55', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":1}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '41.3', 0),
 (3, 'Eliseo', 'VM', 'elyzeo.vm@gmail.com', '2020-02-18 17:45:37', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":1}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '41.3', 0),
-(4, 'EVM', 'EVM', 'elyzeo.vm@gmail.com', '2020-02-18 17:46:53', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":3,\"etiquetas\":3}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 3, '63.900000000000006', 0),
+(4, 'EVM', 'EVM', 'elyzeo.vm@gmail.com', '2020-02-18 17:46:53', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":3,\"etiquetas\":3}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 3, '63.900000000000006', 1),
 (5, 'Eliseo', 'VM', 'elyzeo.vm@gmail.com', '2020-02-19 15:21:47', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":2,\"etiquetas\":2}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '52.6', 1),
 (6, 'EVM', 'VM', 'elyzeo.vm@gmail.com', '2020-02-19 17:05:06', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":1}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '41.3', 0),
 (7, 'Eliseo', 'VM', 'elyzeo.vm@gmail.com', '2020-02-19 17:05:28', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":2,\"etiquetas\":2}', '{\"eventos\":[\"taller_01\",\"taller_02\"]}', 2, '52.6', 0),
@@ -207,7 +207,11 @@ INSERT INTO `registrados` (`ID_registrado`, `nombre_registrado`, `apellido_regis
 (10, 'Eliseo3', 'VM3', 'elyzeo.vm@gmail.com', '2020-09-18 10:11:27', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"1\"},\"pase_2dias\":{\"cantidad\":\"1\"},\"camisas\":1}', '{\"eventos\":[\"2\",\"8\",\"9\",\"4\",\"5\",\"17\",\"18\",\"19\",\"12\"]}', 2, '136.3', 1),
 (11, 'Eliseo4', 'VM4', 'elyzeo.vm@gmail.com', '2020-09-23 06:44:01', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"2\"},\"pase_2dias\":{\"cantidad\":\"3\"},\"camisas\":1}', '{\"eventos\":[\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 3, '278.3', 1),
 (12, '5', '5', 'elyzeo.vm@gmail.com', '2020-09-25 12:20:16', '{\"un_dia\":{\"cantidad\":\"5\"},\"pase_completo\":{\"cantidad\":\"5\"},\"pase_2dias\":{\"cantidad\":\"5\"},\"camisas\":5}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 3, '681.5', 1),
-(13, '10', '10', 'elyzeo.vm@gmail.com', '2020-09-25 12:58:24', '{\"un_dia\":{\"cantidad\":\"10\"},\"pase_completo\":{\"cantidad\":\"10\"},\"pase_2dias\":{\"cantidad\":\"10\"},\"camisas\":10}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 3, '1363', 1);
+(13, '10', '10', 'elyzeo.vm@gmail.com', '2020-09-25 12:58:24', '{\"un_dia\":{\"cantidad\":\"10\"},\"pase_completo\":{\"cantidad\":\"10\"},\"pase_2dias\":{\"cantidad\":\"10\"},\"camisas\":10}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 3, '1363', 1),
+(14, '13', '13', 'elyzeo.vm@gmail.com', '2020-09-25 22:45:24', '{\"un_dia\":{\"cantidad\":\"13\"},\"pase_completo\":{\"cantidad\":\"13\"},\"pase_2dias\":{\"cantidad\":\"13\"},\"camisas\":13}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"22\",\"24\",\"26\"]}', 3, '1771.9', 1),
+(15, '20', '20', 'elyzeo.vm@gmail.com', '2020-09-25 23:20:41', '{\"un_dia\":{\"cantidad\":\"20\"},\"pase_completo\":{\"cantidad\":\"20\"},\"pase_2dias\":{\"cantidad\":\"20\"},\"camisas\":20,\"etiquetas\":20}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 2, '2726', 1),
+(16, '40', '40', 'elyzeo.vm@gmail.com', '2020-09-30 12:45:10', '{\"un_dia\":{\"cantidad\":\"40\"},\"pase_completo\":{\"cantidad\":\"40\"},\"pase_2dias\":{\"cantidad\":\"40\"},\"camisas\":40,\"etiquetas\":40}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 3, '5452', 1),
+(17, '123', '123', 'elyzeo.vm@gmail.com', '2020-10-02 15:48:15', '{\"un_dia\":{\"cantidad\":\"123\"},\"pase_completo\":{\"cantidad\":\"123\"},\"pase_2dias\":{\"cantidad\":\"123\"},\"camisas\":123,\"etiquetas\":123}', '{\"eventos\":[\"10\",\"2\",\"7\",\"8\",\"9\",\"4\",\"5\",\"6\",\"17\",\"18\",\"19\",\"12\",\"13\",\"14\",\"15\",\"16\",\"30\",\"31\",\"28\",\"29\",\"22\",\"24\",\"25\",\"26\"]}', 1, '16764.9', 1);
 
 --
 -- Índices para tablas volcadas
@@ -291,7 +295,7 @@ ALTER TABLE `regalos`
 -- AUTO_INCREMENT de la tabla `registrados`
 --
 ALTER TABLE `registrados`
-  MODIFY `ID_registrado` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID_registrado` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
