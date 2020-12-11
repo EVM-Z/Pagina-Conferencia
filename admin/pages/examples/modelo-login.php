@@ -23,7 +23,7 @@ if (isset($_POST['login-admin'])) {
 
     try {
         // php statement
-        $stmt = $conn->prepare("SELECT * FROM admins WHERE usuario = ?;");
+        $stmt = $conn->prepare("SELECT * FROM admins WHERE usuario = ? ");
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
         $stmt->bind_result($id_admin, $usuario_admin, $nombre_admin, $password_admin, $editado, $nivel);

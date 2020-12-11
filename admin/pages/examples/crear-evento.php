@@ -83,7 +83,7 @@ include 'templates/navegacion-lateral.php';
                         <div class="form-group">
                         <label>Fecha Evento:</label>
                             <div class="input-group date" id="fecha" data-target-input="nearest">
-                                <input type="text" name="fecha_evento" id="fecha" class="form-control datetimepicker-input" data-target="#fecha"/>
+                                <input type="text" name="fecha_evento" id="fecha" class="form-control datetimepicker-input" data-target="#fecha" placeholder="dd/mm/aa"/>
                                 <div class="input-group-append" data-target="#fecha" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                 </div>

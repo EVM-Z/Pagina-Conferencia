@@ -16,6 +16,7 @@ include 'templates/header.php';
     <div class="login-box">
         <div class="login-logo">
             <a href="../../../index.php"><b>GDL</b>WebCamp</a>
+            <h6>admin - admin</h6>
         </div>
     <!-- /.login-logo -->
     <div class="card">

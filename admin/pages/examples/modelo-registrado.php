@@ -99,7 +99,8 @@ if ($_POST['registro'] == 'eliminar') {
                 'respuesta' => 'error'
             );
         }
-        
+        $stmt->close();
+        $conn->close();
     } catch (Exception $e) {
         $respuesta = array(
             'respuesta' => $e->getMessage()

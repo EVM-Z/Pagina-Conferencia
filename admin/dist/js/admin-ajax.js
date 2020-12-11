@@ -5,10 +5,11 @@ $(document).ready(function() {
         // Obtener los datos
         // serializeArray() justa todos los datos en un arreglo
         var datos = $(this).serializeArray();
-
         $.ajax({
+            // Lee el method="POST"
             type: $(this).attr('method'),
             data: datos,
+            // La URL del formulario action="modelo-nuevo.php"
             url: $(this).attr('action'),
             dataType: 'json',
             success: function(data) {
@@ -18,9 +19,12 @@ $(document).ready(function() {
                     // Mensaje en popup
                     Swal.fire(
                         'OK',
-                        'Se guardó correctamente',
+                        'Bienvenido',
                         'success'
                     )
+                    setTimeout(function() {
+                        window.location.href = 'dashboard.php';
+                    }, 2000);
                 } else {
                     Swal.fire(
                         'Error',

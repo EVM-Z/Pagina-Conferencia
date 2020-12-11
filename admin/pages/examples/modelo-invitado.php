@@ -78,7 +78,7 @@ if ($_POST['registro']  == 'nuevo') {
 
 if($_POST['registro'] == 'actualizar'){
 
-    $directorio = "../../../img/invitados";
+    $directorio = "../../../img/invitados/";
 
     // is_dir verifica si el directorio existe
     if (!is_dir($directorio)) {
