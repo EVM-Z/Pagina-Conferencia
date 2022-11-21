@@ -1,7 +1,7 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
   <section class="seccion contenedor">
-    <h2>Registor de Usuarios</h2>
+    <h2>Registro de Usuarios</h2>
     <form action="pagar.php" id="registro" class="registro" method="POST">
       <div class="registro caja clearfix" id="datos_usuario">
         <div class="campo">
